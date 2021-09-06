@@ -7,7 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/calendario.css">
-    
+    <!-- Bootstrap-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
     <title>Agendamento</title>
 </head>
 
@@ -16,7 +18,7 @@
     <header></header><br><br><br>
 
     <!-- Formulário para agendamento-->
-    <div class="container">
+    <div class="text-center container col-x-6">
         <div>
             <form id="form" action=" ">
                 <label for="nome">Nome:</label>
@@ -24,24 +26,24 @@
                 <label for="email">E-Mail:</label>
                 <input type="email" id="email" name="email"><br><br>
                 <label for="unidade">Unidade:</label>
-                <input type="button" id="uni-sp"  value="São Paulo" onclick="mostraSP()">  
-                  <input type="button" id="uni-s" value="Santos" onclick="mostraSantos()"> <br><br>               
-                <input type="reset" value="Limpar">
+                <input type="button" id="uni-sp" class="btn border-none bg-white"  value="São Paulo" onclick="mostraSP()">  
+                  <input type="button" id="uni-s" class="btn border-none bg-white" value="Santos" onclick="mostraSantos()"> <br><br>               
+                <input type="reset" value="Limpar" onclick="limpar()">
             </form>
         </div>
         <br><br>
 
         <!-- Calendário com as datas para o usuário selecionar-->
-        <div  id="sp" class="hidden">
+        <div  id="sp" class="hidden col-x-6">
             
                 <p>Em cumprimento do Decreto Estadual nº XXXXXXXXXXXX os escritórios da FCamara só poderão funcionar com a capacidade máxima de 40%.
                     Portanto, não receberemos mais que 240 pessoas na Unidade São Paulo. 
                 </p>
-                    <table>
+                    <table class="table">
                         <tr>
-                         <th colspan="7">   SETEMBRO 2021 - Unidade São Paulo </th> 
+                         <th class="text-center" colspan="7">   SETEMBRO 2021 - Unidade São Paulo </th> 
                         </tr>
-                        <tr>
+                        <tr class="text-center">
                             <th class="domingo-feriado">D</th>
                             <th>S</th>
                             <th>T</th>
@@ -50,52 +52,52 @@
                             <th>S</th>
                             <th>S</th>
                         </tr>
-                        <tr>
-                            <td><button class="domingo-feriado">29</button></td>
-                            <td> <button class="">30</button></td>
-                            <td><button class="">31</button></td>
-                            <td><button class="">01</button></td>
-                            <td><button class="">02</button></td>
-                            <td><button class="">03</button></td>
-                            <td><button class="">04</button></td>
+                        <tr class="text-left">
+                            <td><button class="btn domingo-feriado">29</button></td>
+                            <td> <button class="btn">30</button></td>
+                            <td><button class="btn">31</button></td>
+                            <td><button class="btn">01</button></td>
+                            <td><button class="btn">02</button></td>
+                            <td><button class="btn">03</button></td>
+                            <td><button class="btn">04</button></td>
                             
                         </tr>
-                        <tr>
-                            <td><button class="domingo-feriado">05</button></td>
-                            <td><button class="">06</button></td>
-                            <td><button class="domingo-feriado">07</button></td>
-                            <td> <button id="dia08" onclick="agendaDia(), limitePessoas()">08</button></td>
-                            <td> <button class="">09</button></td>
-                            <td><button class="">10</button></td>
-                            <td><button class="">11</button></td>
+                        <tr class="text-left">
+                            <td><button class="btn domingo-feriado">05</button></td>
+                            <td><button class="btn">06</button></td>
+                            <td><button class="btn domingo-feriado">07</button></td>
+                            <td> <button class="btn" id="dia08" onclick="agendaDia(), limitePessoas()">08</button></td>
+                            <td> <button class="btn">09</button></td>
+                            <td><button class="btn">10</button></td>
+                            <td><button class="btn">11</button></td>
                         </tr>
-                        <tr>
-                            <td><button class="domingo-feriado">12</button></td>
-                            <td><button class="">13</button></td>
-                            <td><button class="">14</button></td>
-                            <td><button class="">15</button></td>
-                            <td><button class="">16</button></td>
-                            <td><button class="">17</button></td>
-                            <td> <button class="">18</button></td>
+                        <tr class="text-left">
+                            <td><button class="btn domingo-feriado">12</button></td>
+                            <td><button class="btn">13</button></td>
+                            <td><button class="btn">14</button></td>
+                            <td><button class="btn">15</button></td>
+                            <td><button class="btn">16</button></td>
+                            <td><button class="btn">17</button></td>
+                            <td> <button class="btn">18</button></td>
                         </tr>
-                        <tr>
-                            <td><button class="domingo-feriado">19</button></td>
-                            <td><button class="">20</button></td>
-                            <td><button class="">21</button></td>
-                            <td><button class="">22</button></td>
-                            <td><button class="">23</button></td>
-                            <td><button class="">24</button></td>
-                            <td><button class="">25</button></td>
+                        <tr class="text-left">
+                            <td><button class="btn domingo-feriado">19</button></td>
+                            <td><button class="btn">20</button></td>
+                            <td><button class="btn">21</button></td>
+                            <td><button class="btn">22</button></td>
+                            <td><button class="btn">23</button></td>
+                            <td><button class="btn">24</button></td>
+                            <td><button class="btn">25</button></td>
 
                         </tr>
-                        <tr>
-                            <td><button class="domingo-feriado">26</button></td>
-                            <td><button class="">27</button></td>
-                            <td><button class="">28</button></td>
-                            <td><button class="">29</button></td>
-                            <td><button class="">30</button></td>
-                            <td><button class="">01</button></td>
-                            <td><button class="">02</button></td>
+                        <tr class="text-left">
+                            <td><button class="btn domingo-feriado">26</button></td>
+                            <td><button class="btn">27</button></td>
+                            <td><button class="btn">28</button></td>
+                            <td><button class="btn">29</button></td>
+                            <td><button class="btn">30</button></td>
+                            <td><button class="btn">01</button></td>
+                            <td><button class="btn">02</button></td>
 
                         </tr>
                     </table>
@@ -110,11 +112,11 @@
     <p>Em cumprimento do Decreto Estadual nº XXXXXXXXXXXX os escritórios da FCamara só poderão funcionar com a capacidade máxima de 40%.
         Portanto, não receberemos mais que 40 pessoas na Unidade Santos.
     </p>   
-                    <table>
+                    <table class="table">
                         <tr>
-                           <th colspan="7">SETEMBRO 2021 - Unidade Santos</th>
+                           <th class="text-center" colspan="7">SETEMBRO 2021 - Unidade Santos</th>
                         </tr>
-                        <tr>
+                        <tr class="text-center">
                             <th class="domingo-feriado">D</th>
                             <th>S</th>
                             <th>T</th>
@@ -123,7 +125,7 @@
                             <th>S</th>
                             <th>S</th>
                         </tr>
-                        <tr>
+                        <tr class="text-left">
                             <td><button class="domingo-feriado">29</button></td>
                             <td> <button class="">30</button></td>
                             <td><button class="">31</button></td>
@@ -133,7 +135,7 @@
                             <td><button class="">04</button></td>
                             
                         </tr>
-                        <tr>
+                        <tr class="text-left">
                             <td><button class="domingo-feriado">05</button></td>
                             <td><button class="">06</button></td>
                             <td><button class="domingo-feriado">07</button></td>
@@ -142,7 +144,7 @@
                             <td><button class="">10</button></td>
                             <td><button class="">11</button></td>
                         </tr>
-                        <tr>
+                        <tr class="text-left">
                             <td><button class="domingo-feriado">12</button></td>
                             <td><button class="">13</button></td>
                             <td><button class="">14</button></td>
@@ -151,7 +153,7 @@
                             <td><button class="">17</button></td>
                             <td> <button class="">18</button></td>
                         </tr>
-                        <tr>
+                        <tr class="text-left">
                             <td><button class="domingo-feriado">19</button></td>
                             <td><button class="">20</button></td>
                             <td><button class="">21</button></td>
@@ -161,7 +163,7 @@
                             <td><button class="">25</button></td>
 
                         </tr>
-                        <tr>
+                        <tr class="text-left">
                             <td><button class="domingo-feriado">26</button></td>
                             <td><button class="">27</button></td>
                             <td><button class="">28</button></td>
