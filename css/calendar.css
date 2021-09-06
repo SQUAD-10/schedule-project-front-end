@@ -1,22 +1,22 @@
 table, th, td {
-    border: 1px solid white;
+    border: 1px solid black;
     border-collapse: collapse;
     width: 600px;
     height: 50px;
   }
 
   th, td {
-    background-color: #404099;
+    background-color: white;
   }
 
 th {
     text-align:center;
-    color: honeydew;
+    color: black;
 }
 
 button {
-    color: honeydew;
-    background-color: #404099;
+    color: black;
+    background-color: white;
    border: none;
     text-align: left;
     width: 100%;
@@ -40,5 +40,9 @@ table {
 }
 
 .domingo-feriado {
-    background-color: red;
+    color: red;
+}
+
+.outro-mes {
+    color: grey;
 }
