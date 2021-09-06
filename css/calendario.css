@@ -22,27 +22,17 @@ button {
     width: 100%;
     height: 100%;
 }
- .dividido {
-     
-     width: 100%;
-     height: 42%;
- }
-
 
 .calendario {
     text-align: center;
 }
 
 table {
-    display: inline-block;
+    
     text-align: left;
     
 }
 
 .domingo-feriado {
     color: red;
-}
-
-.outro-mes {
-    color: grey;
 }
