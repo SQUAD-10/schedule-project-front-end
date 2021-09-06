@@ -24,15 +24,15 @@
                 <label for="email">E-Mail:</label>
                 <input type="email" id="email" name="email"><br><br>
                 <label for="unidade">Unidade:</label>
-                <input type="submit" id="uni-sp" name="unidade" value="São Paulo" onclick="calendarioSP()">  
-                  <input type="submit" id="uni-s" name="unidade" value="Santos" onclick="calendarioSan()"> <br><br>               
+                <input type="button" id="uni-sp"  value="São Paulo" onclick="mostraSP()">  
+                  <input type="button" id="uni-s" value="Santos" onclick="mostraSantos()"> <br><br>               
                 <input type="reset" value="Limpar">
             </form>
         </div>
         <br><br>
 
         <!-- Calendário com as datas para o usuário selecionar-->
-        <div  id="sp" class="calendario-sao-paulo">
+        <div  id="sp" class="hidden">
             
                 <p>Em cumprimento do Decreto Estadual nº XXXXXXXXXXXX os escritórios da FCamara só poderão funcionar com a capacidade máxima de 40%.
                     Portanto, não receberemos mais que 240 pessoas na Unidade São Paulo. 
@@ -64,7 +64,7 @@
                             <td><button class="domingo-feriado">05</button></td>
                             <td><button class="">06</button></td>
                             <td><button class="domingo-feriado">07</button></td>
-                            <td> <button class="" onclick="agendaDia(), limitePessoas()">08</button></td>
+                            <td> <button id="dia08" onclick="agendaDia(), limitePessoas()">08</button></td>
                             <td> <button class="">09</button></td>
                             <td><button class="">10</button></td>
                             <td><button class="">11</button></td>
@@ -105,7 +105,7 @@
           
 
         </div>
- <div  class="calendario-santos">
+ <div id="santos" class="hidden">
         
     <p>Em cumprimento do Decreto Estadual nº XXXXXXXXXXXX os escritórios da FCamara só poderão funcionar com a capacidade máxima de 40%.
         Portanto, não receberemos mais que 40 pessoas na Unidade Santos.

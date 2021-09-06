@@ -36,3 +36,7 @@ table {
 .domingo-feriado {
     color: red;
 }
+
+.hidden {
+    display: none;
+}
