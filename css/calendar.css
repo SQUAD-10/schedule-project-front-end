@@ -1,0 +1,44 @@
+table, th, td {
+    border: 1px solid white;
+    border-collapse: collapse;
+    width: 600px;
+    height: 50px;
+  }
+
+  th, td {
+    background-color: #404099;
+  }
+
+th {
+    text-align:center;
+    color: honeydew;
+}
+
+button {
+    color: honeydew;
+    background-color: #404099;
+   border: none;
+    text-align: left;
+    width: 100%;
+    height: 100%;
+}
+ .dividido {
+     
+     width: 100%;
+     height: 42%;
+ }
+
+
+.calendario {
+    text-align: center;
+}
+
+table {
+    display: inline-block;
+    text-align: left;
+    
+}
+
+.domingo-feriado {
+    background-color: red;
+}
