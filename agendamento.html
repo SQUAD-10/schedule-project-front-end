@@ -7,9 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/calendario.css">
+    <link rel="stylesheet" href="css/dynamic-calendar.scss">
     <!-- Bootstrap-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
     <title>Agendamento</title>
 </head>
 
@@ -37,148 +39,90 @@
         <div  id="sp" class="hidden col-x-6">
             
                 <p>Em cumprimento do Decreto Estadual nº XXXXXXXXXXXX os escritórios da FCamara só poderão funcionar com a capacidade máxima de 40%.
-                    Portanto, não receberemos mais que 240 pessoas na Unidade São Paulo. 
+                    Portanto, não receberemos mais que 240 pessoas na Unidade de São Paulo e 40 na Unidade de Santos. 
                 </p>
-                    <table class="table">
-                        <tr>
-                         <th class="text-center" colspan="7">   SETEMBRO 2021 - Unidade São Paulo </th> 
-                        </tr>
-                        <tr class="text-center">
-                            <th class="domingo-feriado">D</th>
-                            <th>S</th>
-                            <th>T</th>
-                            <th>Q</th>
-                            <th>Q</th>
-                            <th>S</th>
-                            <th>S</th>
-                        </tr>
-                        <tr class="text-left">
-                            <td><button class="btn domingo-feriado">29</button></td>
-                            <td> <button class="btn">30</button></td>
-                            <td><button class="btn">31</button></td>
-                            <td><button class="btn">01</button></td>
-                            <td><button class="btn">02</button></td>
-                            <td><button class="btn">03</button></td>
-                            <td><button class="btn">04</button></td>
-                            
-                        </tr>
-                        <tr class="text-left">
-                            <td><button class="btn domingo-feriado">05</button></td>
-                            <td><button class="btn">06</button></td>
-                            <td><button class="btn domingo-feriado">07</button></td>
-                            <td> <button class="btn" id="dia08" onclick="agendaDia(), limitePessoas()">08</button></td>
-                            <td> <button class="btn">09</button></td>
-                            <td><button class="btn">10</button></td>
-                            <td><button class="btn">11</button></td>
-                        </tr>
-                        <tr class="text-left">
-                            <td><button class="btn domingo-feriado">12</button></td>
-                            <td><button class="btn">13</button></td>
-                            <td><button class="btn">14</button></td>
-                            <td><button class="btn">15</button></td>
-                            <td><button class="btn">16</button></td>
-                            <td><button class="btn">17</button></td>
-                            <td> <button class="btn">18</button></td>
-                        </tr>
-                        <tr class="text-left">
-                            <td><button class="btn domingo-feriado">19</button></td>
-                            <td><button class="btn">20</button></td>
-                            <td><button class="btn">21</button></td>
-                            <td><button class="btn">22</button></td>
-                            <td><button class="btn">23</button></td>
-                            <td><button class="btn">24</button></td>
-                            <td><button class="btn">25</button></td>
+                
+                <div class="calendar">
+                    <div class="calendar__month">
+                      <div class="cal-month__previous"><</div>
+                      <div class="cal-month__current"></div>
+                      <div class="cal-month__next">></div>
+                    </div>
+                    <div class="calendar__head">
+                      <div class="cal-head__day"></div>
+                      <div class="cal-head__day"></div>
+                      <div class="cal-head__day"></div>
+                      <div class="cal-head__day"></div>
+                      <div class="cal-head__day"></div>
+                      <div class="cal-head__day"></div>
+                      <div class="cal-head__day"></div>
+                    </div>
+                    <div class="calendar__body">
+                      <div class="cal-body__week">
+                        <div class="cal-body__day"></div>
+                        <div class="cal-body__day"></div>
+                        <div class="cal-body__day"></div>
+                        <div class="cal-body__day"></div>
+                        <div class="cal-body__day"></div>
+                        <div class="cal-body__day"></div>
+                        <div class="cal-body__day"></div>
+                      </div>
+                      <div class="cal-body__week">
+                        <div class="cal-body__day"></div>
+                        <div class="cal-body__day"></div>
+                        <div class="cal-body__day"></div>
+                        <div class="cal-body__day"></div>
+                        <div class="cal-body__day"></div>
+                        <div class="cal-body__day"></div>
+                        <div class="cal-body__day"></div>
+                      </div>
+                      <div class="cal-body__week">
+                        <div class="cal-body__day"></div>
+                        <div class="cal-body__day"></div>
+                        <div class="cal-body__day"></div>
+                        <div class="cal-body__day"></div>
+                        <div class="cal-body__day"></div>
+                        <div class="cal-body__day"></div>
+                        <div class="cal-body__day"></div>
+                      </div>
+                      <div class="cal-body__week">
+                        <div class="cal-body__day"></div>
+                        <div class="cal-body__day"></div>
+                        <div class="cal-body__day"></div>
+                        <div class="cal-body__day"></div>
+                        <div class="cal-body__day"></div>
+                        <div class="cal-body__day"></div>
+                        <div class="cal-body__day"></div>
+                      </div>
+                      <div class="cal-body__week">
+                        <div class="cal-body__day"></div>
+                        <div class="cal-body__day"></div>
+                        <div class="cal-body__day"></div>
+                        <div class="cal-body__day"></div>
+                        <div class="cal-body__day"></div>
+                        <div class="cal-body__day"></div>
+                        <div class="cal-body__day"></div>
+                      </div>
+                      <div class="cal-body__week">
+                        <div class="cal-body__day"></div>
+                        <div class="cal-body__day"></div>
+                        <div class="cal-body__day"></div>
+                        <div class="cal-body__day"></div>
+                        <div class="cal-body__day"></div>
+                        <div class="cal-body__day"></div>
+                        <div class="cal-body__day"></div>
+                      </div>
+                    </div>
+                  </div>
+                  
 
-                        </tr>
-                        <tr class="text-left">
-                            <td><button class="btn domingo-feriado">26</button></td>
-                            <td><button class="btn">27</button></td>
-                            <td><button class="btn">28</button></td>
-                            <td><button class="btn">29</button></td>
-                            <td><button class="btn">30</button></td>
-                            <td><button class="btn">01</button></td>
-                            <td><button class="btn">02</button></td>
-
-                        </tr>
-                    </table>
                     <input type="submit" id="agendar-sp" name="Agendar-SP" value="Agendar">
            <br><br><br>     
             
           
 
         </div>
- <div id="santos" class="hidden">
-        
-    <p>Em cumprimento do Decreto Estadual nº XXXXXXXXXXXX os escritórios da FCamara só poderão funcionar com a capacidade máxima de 40%.
-        Portanto, não receberemos mais que 40 pessoas na Unidade Santos.
-    </p>   
-                    <table class="table">
-                        <tr>
-                           <th class="text-center" colspan="7">SETEMBRO 2021 - Unidade Santos</th>
-                        </tr>
-                        <tr class="text-center">
-                            <th class="domingo-feriado">D</th>
-                            <th>S</th>
-                            <th>T</th>
-                            <th>Q</th>
-                            <th>Q</th>
-                            <th>S</th>
-                            <th>S</th>
-                        </tr>
-                        <tr class="text-left">
-                            <td><button class="domingo-feriado">29</button></td>
-                            <td> <button class="">30</button></td>
-                            <td><button class="">31</button></td>
-                            <td><button class="">01</button></td>
-                            <td><button class="">02</button></td>
-                            <td><button class="">03</button></td>
-                            <td><button class="">04</button></td>
-                            
-                        </tr>
-                        <tr class="text-left">
-                            <td><button class="domingo-feriado">05</button></td>
-                            <td><button class="">06</button></td>
-                            <td><button class="domingo-feriado">07</button></td>
-                            <td> <button class="">08</button></td>
-                            <td> <button class="">09</button></td>
-                            <td><button class="">10</button></td>
-                            <td><button class="">11</button></td>
-                        </tr>
-                        <tr class="text-left">
-                            <td><button class="domingo-feriado">12</button></td>
-                            <td><button class="">13</button></td>
-                            <td><button class="">14</button></td>
-                            <td><button class="">15</button></td>
-                            <td><button class="">16</button></td>
-                            <td><button class="">17</button></td>
-                            <td> <button class="">18</button></td>
-                        </tr>
-                        <tr class="text-left">
-                            <td><button class="domingo-feriado">19</button></td>
-                            <td><button class="">20</button></td>
-                            <td><button class="">21</button></td>
-                            <td><button class="">22</button></td>
-                            <td><button class="">23</button></td>
-                            <td><button class="">24</button></td>
-                            <td><button class="">25</button></td>
-
-                        </tr>
-                        <tr class="text-left">
-                            <td><button class="domingo-feriado">26</button></td>
-                            <td><button class="">27</button></td>
-                            <td><button class="">28</button></td>
-                            <td><button class="">29</button></td>
-                            <td><button class="">30</button></td>
-                            <td><button class="">01</button></td>
-                            <td><button class="">02</button></td>
-
-                        </tr>
-                    </table>
-                    <input type="submit" id="agendar-sa" name="Agendar-SA" value="Agendar">
-                
-            
-          
-
+ 
         </div>
      
         <!--INSERIR FOOTER-->
@@ -186,6 +130,8 @@
 
         <script src="script/calendario.js"></script>
         <script src="script/capacidade.js"></script>
+        <script src="https://momentjs.com/downloads/moment-with-locales.js"></script>
+        <script src="script/script.js"></script>
 </body>
 
 </html>
