@@ -1,6 +1,6 @@
 body {
-  background-color: #333;
-  color: #aaa;
+  background-color: white;
+  color: #333;
   font-family: "Josefin Sans";
 }
 
@@ -42,7 +42,7 @@ body {
 
 .cal-month__current {
   text-align: center;
-  color: #e1e1e1;
+  color: #6d6c6c;
 }
 
 .cal-head__day,
@@ -75,14 +75,14 @@ body {
 }
 
 .cal-body__day {
-  color: #777;
+  color: #e1e1e1;
   line-height: 50px;
   text-align: center;
   cursor: pointer;
 }
 
 .cal-day__month--current {
-  color: #e1e1e1;
+  color: #777 ;
 }
 
 .cal-day__day--today {
