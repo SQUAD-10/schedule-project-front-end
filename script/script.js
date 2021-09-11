@@ -19,8 +19,12 @@ class Calendar {
       day.innerText = this.weekDays[index];
     });
 
-    this.nextDiv.addEventListener('click', _ => {this.addMonth();});
-    this.prevDiv.addEventListener('click', _ => {this.removeMonth();});
+    this.nextDiv.addEventListener('click', _ => {
+      this.addMonth();
+    });
+    this.prevDiv.addEventListener('click', _ => {
+      this.removeMonth();
+    });
 
     this.bodyDivs.forEach(day => {
       day.addEventListener('click', e => {
@@ -44,12 +48,14 @@ class Calendar {
   update() {
     this.calendarDays = {
       first: this.month.clone().startOf('month').startOf('week').date(),
-      last: this.month.clone().endOf('month').date() };
+      last: this.month.clone().endOf('month').date()
+    };
 
 
     this.monthDays = {
       lastPrevious: this.month.clone().subtract(1, 'months').endOf('month').date(),
-      lastCurrent: this.month.clone().endOf('month').date() };
+      lastCurrent: this.month.clone().endOf('month').date()
+    };
 
 
     this.monthString = this.month.clone().format('MMMM YYYY');
@@ -113,18 +119,19 @@ class Calendar {
 
   cleanCssClasses(selected, index) {
     this.bodyDivs[index].classList.contains('cal-day__month--next') &&
-    this.bodyDivs[index].classList.remove('cal-day__month--next');
+      this.bodyDivs[index].classList.remove('cal-day__month--next');
     this.bodyDivs[index].classList.contains('cal-day__month--previous') &&
-    this.bodyDivs[index].classList.remove('cal-day__month--previous');
+      this.bodyDivs[index].classList.remove('cal-day__month--previous');
     this.bodyDivs[index].classList.contains('cal-day__month--current') &&
-    this.bodyDivs[index].classList.remove('cal-day__month--current');
+      this.bodyDivs[index].classList.remove('cal-day__month--current');
     this.bodyDivs[index].classList.contains('cal-day__day--today') &&
-    this.bodyDivs[index].classList.remove('cal-day__day--today');
+      this.bodyDivs[index].classList.remove('cal-day__day--today');
     if (selected) {
       this.bodyDivs[index].classList.contains('cal-day__day--selected') &&
-      this.bodyDivs[index].classList.remove('cal-day__day--selected');
+        this.bodyDivs[index].classList.remove('cal-day__day--selected');
     }
-  }}
+  }
+}
 
 
 const cal = new Calendar();
