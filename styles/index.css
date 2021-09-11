@@ -7,9 +7,11 @@
 }
 
 :root {
-  --bg-color: #f6f6f6f6;
+  --bg-color: #f0f0f0f0;
   --header: #36357e;
-  --white: #f1f1f1;
+  --white: #fcfcfc;
+  --orange: #fe5517;
+  --light-orange: #fe885c;
 }
 
 html {
@@ -26,7 +28,7 @@ header {
   justify-content: center;
   height: 25rem;
   background: var(--header);
-  color: var(--white);
+  color: var(--orange);
 }
 
 .container {
@@ -36,13 +38,13 @@ header {
   padding: 2rem;
   width: 80rem;
   font-size: 3rem;
-  border: 1px solid black;
 }
 
 main {
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  padding: 2rem;
+  align-items: center;
 }
 
 form {
@@ -50,6 +52,10 @@ form {
   flex-direction: column;
   align-items: center;
   font-size: 2rem;
+  background-color: var(--white);
+  border-radius: 0.5rem;
+  width: 80rem;
+  margin-top: 2rem;
 }
 
 form input {
@@ -58,6 +64,32 @@ form input {
   width: 30rem;
   height: 4rem;
   border-radius: 0.5rem;
-  border: 0.1rem solid #fe885c;
+  border: 0.1rem solid var(--light-orange);
+  font-size: 2rem;
+}
+
+.buttons {
+  display: flex;
+  margin-top: 2rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--white);
+  border-radius: 0.5rem;
+  width: 80rem;
+}
+
+.buttons a {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 30rem;
+  height: 4rem;
+  margin: 2rem 0;
+  padding: 0 1rem;
+  border-radius: 0.5rem;
+  background-color: var(--header);
+  color: var(--white);
   font-size: 2rem;
 }
