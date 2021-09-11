@@ -33,8 +33,31 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0rem 2rem;
+  padding: 2rem;
   width: 80rem;
   font-size: 3rem;
   border: 1px solid black;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 2rem;
+}
+
+form input {
+  margin: 2rem 0;
+  padding: 0 1rem;
+  width: 30rem;
+  height: 4rem;
+  border-radius: 0.5rem;
+  border: 0.1rem solid #fe885c;
+  font-size: 2rem;
 }
