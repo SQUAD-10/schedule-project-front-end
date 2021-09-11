@@ -8,7 +8,8 @@
 
 :root {
   --bg-color: #f0f0f0f0;
-  --header: #36357e;
+  --blue: #36357e;
+  --light-blue: #7474b4;
   --white: #fcfcfc;
   --orange: #fe5517;
   --light-orange: #fe885c;
@@ -27,7 +28,7 @@ header {
   display: flex;
   justify-content: center;
   height: 25rem;
-  background: var(--header);
+  background: var(--blue);
   color: var(--orange);
 }
 
@@ -89,7 +90,7 @@ form input {
   margin: 2rem 0;
   padding: 0 1rem;
   border-radius: 0.5rem;
-  background-color: var(--header);
+  background-color: var(--blue);
   color: var(--white);
   font-size: 2rem;
 }
