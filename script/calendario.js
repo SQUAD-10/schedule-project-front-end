@@ -8,6 +8,13 @@ function mostraSP() {
 function conferir() {
     document.getElementById('sp').style.display = 'none';
     document.querySelector('#confirma').style.display = 'block';
+    document.querySelector('#form').style.display = 'none';
+    document.querySelector('#nome2').innerHTML = nome;
+    document.querySelector('#email2').innerHTML = email;
+    document.querySelector('#unit').innerHTML = unidade;
+    
+    
+
 }
 
 //Voltar após conferir dados de agendamento
@@ -29,3 +36,12 @@ function capturaDia() {
     console.log(diaSelecionado)
 
 }
+
+function pegaAgendamento(){
+    var nome = document.querySelector('#nome');
+    var email = document.querySelector('#email');
+    var unidade = document.querySelector('#unit')
+    
+}
+
+console.log(conferir())

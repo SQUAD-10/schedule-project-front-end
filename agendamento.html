@@ -25,10 +25,12 @@
         <label for="nome">Nome:</label>
         <input type="text" id="nome" name="nome"><br><br>
         <label for="email">E-Mail:</label>
-        <input type="email" id="email" name="email"><br><br>
-        <label for="unidade">Unidade:</label>
-        <input type="radio" class="text-white" value="São Paulo"> São Paulo 
-          <input type="radio" class="text-white" value="Santos"> Santos<br><br>
+        <input type="email" id="email" name="email"><br><br>        
+        <label for="unidade">Escolha uma Unidade:</label>
+        <select id="unit" class="select" name="unidade">
+          <option value="sp">São Paulo</option>
+          <option value="santos">Santos</option>
+        </select><br><br>
         <input type="button" id="uni-sp" class="btn border" value="Mostrar Calendário" onclick="mostraSP()">
         <input type="reset" value="Limpar" class="btn border" onclick="limpar()">
       </form>
@@ -118,7 +120,8 @@
       </div>
 
 
-      <input type="submit" id="agendar-sp" class="btn border" name="Agendar-SP" value="Agendar" onclick="conferir()">
+      <input type="submit" id="agendar-sp" class="btn border text-center" name="Agendar-SP" value="Agendar"
+        onclick="conferir()">
       <br><br><br>
 
 
@@ -126,7 +129,7 @@
     </div>
 
   </div>
-  <div id="confirma" class="hidden col-x-6">
+  <div id="confirma" class="text-center hidden col-x-6">
     <p class="text-center">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Soluta, modi nihil. Eveniet optio
       enim voluptas. Perferendis distinctio animi iure ipsam soluta ipsum officia illo praesentium, provident asperiores
       consectetur possimus porro?</p>
@@ -137,7 +140,9 @@
         <label for="email">E-Mail:</label>
         <input type="email" id="email2" name="email"><br><br>
         <label for="unidade">Unidade:</label>
-        <input type="text" id="unidade" value="Unidade">  
+        <input type="text" id="unidade" value=""><br>
+        <label for="dia">Dia:</label>
+        <input type="text" id="dia" value="">   
          
         <input type="button" id="salvar" class="btn border" value="Salvar" onclick="capturaDia()">
         <input type="button" value="Voltar" class="btn border" onclick="voltar()">
