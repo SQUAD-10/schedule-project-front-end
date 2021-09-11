@@ -1,0 +1,40 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  outline: none;
+}
+
+:root {
+  --bg-color: #f6f6f6f6;
+  --header: #36357e;
+  --white: #f1f1f1;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  background: var(--bg-color);
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  height: 25rem;
+  background: var(--header);
+  color: var(--white);
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0rem 2rem;
+  width: 80rem;
+  font-size: 3rem;
+  border: 1px solid black;
+}
