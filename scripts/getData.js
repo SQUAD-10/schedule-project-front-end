@@ -23,14 +23,16 @@ const year = []
 
 function saveCalendarDate() {
   for(let i = 0; i < calendarDay.length; i++) {
+    // -> ADD DAY
     calendarDay[i].addEventListener('mousedown', () => {
       let selectDay = calendarDay[i].innerText
       selectDay = selectDay.padStart(2, '0')
       day.splice(0, 1, selectDay)
     })
+    // -> ADD MONTH AND YEAR
     calendarDay[i].addEventListener('click', () => {
       let selectMonth = calendarMonth.innerText
-      changeToNumber(selectMonth.slice(0, -5))
+      changeNameToNumber(selectMonth.slice(0, -5))
       year.splice(0, 1, selectMonth.slice(-4))
       showDate()
     })
@@ -38,7 +40,7 @@ function saveCalendarDate() {
 }
 saveCalendarDate()
 
-function changeToNumber(monthName) {
+function changeNameToNumber(monthName) {
   let number = ''
   if(monthName == 'janeiro') {
     number = monthName.replace(monthName, '01')
@@ -81,7 +83,8 @@ function changeToNumber(monthName) {
 
 function showDate() {
   const dateDisplay = document.querySelector('.show-date');
-  dateDisplay.textContent = `${day}/${month}/${year}`
+  const localDate = dateDisplay.textContent = `${day}/${month}/${year}`
+  sessionStorage.setItem('localDate', localDate)
 
   const finalDate = `${year}/${month}/${day}`
   sessionStorage.setItem('date', finalDate)
