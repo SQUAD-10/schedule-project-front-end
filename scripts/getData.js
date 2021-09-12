@@ -90,3 +90,7 @@ function showDate() {
   sessionStorage.setItem('date', finalDate)
   console.log(finalDate)
 }
+
+function goBack() {
+  window.location.href = '/index.html'
+}
