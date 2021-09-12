@@ -21,7 +21,7 @@ const day = []
 const month = []
 const year = []
 
-function saveCalendar() {
+function saveCalendarDate() {
   for(let i = 0; i < calendarDay.length; i++) {
     calendarDay[i].addEventListener('mousedown', () => {
       let selectDay = calendarDay[i].innerText
@@ -32,9 +32,11 @@ function saveCalendar() {
       let selectMonth = calendarMonth.innerText
       changeToNumber(selectMonth.slice(0, -5))
       year.splice(0, 1, selectMonth.slice(-4))
+      showDate()
     })
   }
 }
+saveCalendarDate()
 
 function changeToNumber(monthName) {
   let number = ''
@@ -77,5 +79,11 @@ function changeToNumber(monthName) {
   month.splice(0, 1, number)
 }
 
-saveCalendar()
+function showDate() {
+  const dateDisplay = document.querySelector('.show-date');
+  dateDisplay.textContent = `${day}/${month}/${year}`
+
+  const finalDate = `${year}/${month}/${day}`
+  console.log(finalDate)  
+}
 
