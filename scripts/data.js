@@ -25,6 +25,7 @@ function saveCalendar() {
   for(let i = 0; i < calendarDay.length; i++) {
     calendarDay[i].addEventListener('mousedown', () => {
       let selectDay = calendarDay[i].innerText
+      selectDay = selectDay.padStart(2, '0')
       day.splice(0, 1, selectDay)
     })
     calendarDay[i].addEventListener('click', () => {
