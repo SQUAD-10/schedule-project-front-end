@@ -49,7 +49,8 @@ main {
   align-items: center;
 }
 
-form {
+form,
+.calendar-section {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -82,21 +83,7 @@ form select {
   width: 80rem;
 }
 
-.buttons button {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 30rem;
-  height: 4rem;
-  margin: 2rem 0;
-  padding: 0 1rem;
-  border-radius: 0.5rem;
-  background-color: var(--blue);
-  color: var(--white);
-  font-size: 2rem;
-}
-
+.buttons button,
 .show-date {
   display: flex;
   flex-direction: column;

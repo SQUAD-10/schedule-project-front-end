@@ -1,6 +1,6 @@
 .calendar {
   width: 35rem;
-  margin-top: 2rem;
+  margin-bottom: 2rem;
   background-color: var(--white);
   border-radius: 0.5rem;
 }

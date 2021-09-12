@@ -6,7 +6,7 @@ function saveUser() {
   window.location.href = '/calendar.html'
 }
 
-function savePlaceSelection() {
+function savePlace() {
   const place = document.querySelector('#options').value;
   sessionStorage.setItem('place', place)
   console.log(place)
@@ -42,7 +42,7 @@ function changeToNumber(monthName) {
   let number = ''
   if(monthName == 'janeiro') {
     number = monthName.replace(monthName, '01')
-  } 
+  }
   else if (monthName == 'fevereiro') {
     number = monthName.replace(monthName, '02')
   }
@@ -84,6 +84,6 @@ function showDate() {
   dateDisplay.textContent = `${day}/${month}/${year}`
 
   const finalDate = `${year}/${month}/${day}`
-  console.log(finalDate)  
+  sessionStorage.setItem('date', finalDate)
+  console.log(finalDate)
 }
-

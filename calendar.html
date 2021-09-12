@@ -19,86 +19,90 @@
   <main>
     <form>
       <label for="place">Unidade:</label>
-      <select id="options" type="select" onclick="savePlaceSelection()">
+      <select id="options" type="select" onclick="savePlace()">
         <option value="sao-paulo">São Paulo</option>
         <option value="santos">Santos</option>
       </select>
     </form>
 
-    <div class="calendar">
-      <div class="calendar__month">
-        <div class="cal-month__previous"><</div>
-        <div class="cal-month__current"></div>
-        <div class="cal-month__next">></div>
-      </div>
-      <div class="calendar__head">
-        <div class="cal-head__day"></div>
-        <div class="cal-head__day"></div>
-        <div class="cal-head__day"></div>
-        <div class="cal-head__day"></div>
-        <div class="cal-head__day"></div>
-        <div class="cal-head__day"></div>
-        <div class="cal-head__day"></div>
-      </div>
-      <div class="calendar__body">
-        <div class="cal-body__week">
-          <div class="cal-body__day"></div>
-          <div class="cal-body__day"></div>
-          <div class="cal-body__day"></div>
-          <div class="cal-body__day"></div>
-          <div class="cal-body__day"></div>
-          <div class="cal-body__day"></div>
-          <div class="cal-body__day"></div>
-        </div>
-        <div class="cal-body__week">
-          <div class="cal-body__day"></div>
-          <div class="cal-body__day"></div>
-          <div class="cal-body__day"></div>
-          <div class="cal-body__day"></div>
-          <div class="cal-body__day"></div>
-          <div class="cal-body__day"></div>
-          <div class="cal-body__day"></div>
-        </div>
-        <div class="cal-body__week">
-          <div class="cal-body__day"></div>
-          <div class="cal-body__day"></div>
-          <div class="cal-body__day"></div>
-          <div class="cal-body__day"></div>
-          <div class="cal-body__day"></div>
-          <div class="cal-body__day"></div>
-          <div class="cal-body__day"></div>
-        </div>
-        <div class="cal-body__week">
-          <div class="cal-body__day"></div>
-          <div class="cal-body__day"></div>
-          <div class="cal-body__day"></div>
-          <div class="cal-body__day"></div>
-          <div class="cal-body__day"></div>
-          <div class="cal-body__day"></div>
-          <div class="cal-body__day"></div>
-        </div>
-        <div class="cal-body__week">
-          <div class="cal-body__day"></div>
-          <div class="cal-body__day"></div>
-          <div class="cal-body__day"></div>
-          <div class="cal-body__day"></div>
-          <div class="cal-body__day"></div>
-          <div class="cal-body__day"></div>
-          <div class="cal-body__day"></div>
-        </div>
-        <div class="cal-body__week">
-          <div class="cal-body__day"></div>
-          <div class="cal-body__day"></div>
-          <div class="cal-body__day"></div>
-          <div class="cal-body__day"></div>
-          <div class="cal-body__day"></div>
-          <div class="cal-body__day"></div>
-          <div class="cal-body__day"></div>
-        </div>
-      </div>
-    </div>
+    <section class="calendar-section">
 
-    <div class="show-date"></div>
+      <div class="show-date">Selecione uma data</div>
+
+      <div class="calendar">
+        <div class="calendar__month">
+          <div class="cal-month__previous"><</div>
+          <div class="cal-month__current"></div>
+          <div class="cal-month__next">></div>
+        </div>
+        <div class="calendar__head">
+          <div class="cal-head__day"></div>
+          <div class="cal-head__day"></div>
+          <div class="cal-head__day"></div>
+          <div class="cal-head__day"></div>
+          <div class="cal-head__day"></div>
+          <div class="cal-head__day"></div>
+          <div class="cal-head__day"></div>
+        </div>
+        <div class="calendar__body">
+          <div class="cal-body__week">
+            <div class="cal-body__day"></div>
+            <div class="cal-body__day"></div>
+            <div class="cal-body__day"></div>
+            <div class="cal-body__day"></div>
+            <div class="cal-body__day"></div>
+            <div class="cal-body__day"></div>
+            <div class="cal-body__day"></div>
+          </div>
+          <div class="cal-body__week">
+            <div class="cal-body__day"></div>
+            <div class="cal-body__day"></div>
+            <div class="cal-body__day"></div>
+            <div class="cal-body__day"></div>
+            <div class="cal-body__day"></div>
+            <div class="cal-body__day"></div>
+            <div class="cal-body__day"></div>
+          </div>
+          <div class="cal-body__week">
+            <div class="cal-body__day"></div>
+            <div class="cal-body__day"></div>
+            <div class="cal-body__day"></div>
+            <div class="cal-body__day"></div>
+            <div class="cal-body__day"></div>
+            <div class="cal-body__day"></div>
+            <div class="cal-body__day"></div>
+          </div>
+          <div class="cal-body__week">
+            <div class="cal-body__day"></div>
+            <div class="cal-body__day"></div>
+            <div class="cal-body__day"></div>
+            <div class="cal-body__day"></div>
+            <div class="cal-body__day"></div>
+            <div class="cal-body__day"></div>
+            <div class="cal-body__day"></div>
+          </div>
+          <div class="cal-body__week">
+            <div class="cal-body__day"></div>
+            <div class="cal-body__day"></div>
+            <div class="cal-body__day"></div>
+            <div class="cal-body__day"></div>
+            <div class="cal-body__day"></div>
+            <div class="cal-body__day"></div>
+            <div class="cal-body__day"></div>
+          </div>
+          <div class="cal-body__week">
+            <div class="cal-body__day"></div>
+            <div class="cal-body__day"></div>
+            <div class="cal-body__day"></div>
+            <div class="cal-body__day"></div>
+            <div class="cal-body__day"></div>
+            <div class="cal-body__day"></div>
+            <div class="cal-body__day"></div>
+          </div>
+        </div>
+      </div>
+
+    </section>
 
     <div class="buttons">
       <button>Agendar</button>
@@ -107,6 +111,6 @@
   </main>
   <script src="https://momentjs.com/downloads/moment-with-locales.js"></script>
   <script src="scripts/calendar.js"></script>
-  <script src="scripts/data.js"></script>
+  <script src="scripts/getData.js"></script>
 </body>
 </html>
