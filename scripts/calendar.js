@@ -9,7 +9,7 @@ class Calendar {
   }
   
   init () {
-    moment.locale(window.navigator.userLanguage || window.navigator.language) 
+    moment.locale('pt-br') 
     
     this.month = moment()
     this.today = this.selected = this.month.clone()
