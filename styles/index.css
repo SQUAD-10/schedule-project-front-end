@@ -1,0 +1,100 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  outline: none;
+  border: none;
+}
+
+:root {
+  --bg-color: #f0f0f0f0;
+  --blue: #36357e;
+  --light-blue: #7474b4;
+  --white: #fcfcfc;
+  --orange: #fe5517;
+  --light-orange: #fe885c;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  background: var(--bg-color);
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  height: 25rem;
+  background: var(--blue);
+  color: var(--orange);
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  width: 80rem;
+  font-size: 3rem;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+form,
+.calendar-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 2rem;
+  background-color: var(--white);
+  border-radius: 0.5rem;
+  width: 80rem;
+  margin-top: 2rem;
+}
+
+form input,
+form select {
+  margin: 2rem 0;
+  padding: 0 1rem;
+  width: 30rem;
+  height: 4rem;
+  border-radius: 0.5rem;
+  border: 0.1rem solid var(--light-orange);
+  font-size: 2rem;
+}
+
+.buttons {
+  display: flex;
+  margin-top: 2rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--white);
+  border-radius: 0.5rem;
+  width: 80rem;
+}
+
+.buttons button,
+.show-date {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 30rem;
+  height: 4rem;
+  margin: 2rem 0;
+  padding: 0 1rem;
+  border-radius: 0.5rem;
+  background-color: var(--blue);
+  color: var(--white);
+  font-size: 2rem;
+}
