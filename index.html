@@ -16,16 +16,18 @@
   </header>
 
   <main>
-    <form id="form" action=" ">
+    <form id="form" action="" onsubmit="saveUser(); return false">
       <label for="name">Nome:</label>
-      <input type="text" id="name" name="name">
+      <input type="text" id="name" name="name" required>
       <label for="email">E-mail:</label>
-      <input type="email" id="email" name="email">
+      <input type="email" id="email" name="email" required>
     </form>
     <div class="buttons">
-      <a href="#">Agendar</a>
-      <a href="#">Meus agendamentos</a>
+      <input type="submit" form="form" value="Agendar data" />
+      <input type="submit" value="Meus agendamentos" />
     </div>
   </main>
+
+  <script src="scripts/data.js"></script>
 </body>
 </html>

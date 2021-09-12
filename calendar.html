@@ -17,7 +17,14 @@
   </header>
 
   <main>
-    
+    <form>
+      <label for="place">Unidade:</label>
+      <select id="options" type="select" onclick="saveSelection()">
+        <option value="sao-paulo">São Paulo</option>
+        <option value="santos">Santos</option>
+      </select>
+    </form>
+
     <div class="calendar">
       <div class="calendar__month">
         <div class="cal-month__previous"><</div>
@@ -90,9 +97,14 @@
         </div>
       </div>
     </div>
-    
+
+    <div class="buttons">
+      <a href="#">Agendar</a>
+      <a href="index.html">Voltar</a>
+    </div>
   </main>
   <script src="https://momentjs.com/downloads/moment-with-locales.js"></script>
   <script src="scripts/calendar.js"></script>
+  <script src="scripts/data.js"></script>
 </body>
 </html>

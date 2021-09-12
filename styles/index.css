@@ -4,6 +4,7 @@
   box-sizing: border-box;
   text-decoration: none;
   outline: none;
+  border: none;
 }
 
 :root {
@@ -59,7 +60,8 @@ form {
   margin-top: 2rem;
 }
 
-form input {
+form input,
+form select {
   margin: 2rem 0;
   padding: 0 1rem;
   width: 30rem;
@@ -80,7 +82,7 @@ form input {
   width: 80rem;
 }
 
-.buttons a {
+.buttons input {
   display: flex;
   flex-direction: column;
   justify-content: center;
