@@ -48,12 +48,7 @@ function renderData(data) {
         Email: ${data[i].email} </br>
         Data: ${data[i].date.slice(8,10) + data[i].date.slice(4,8) + data[i].date.slice(0,4)} </br>
       </div>
-
-      <div class="options">
-       <div> <button onclick="deleteAppointment('${data[i]._id}')"></button> Cancelar </div>
-       <div> <button type="button" onclick="update()"></button> Alterar </div>
-      </div>
-
+       <div class="options"> <button class="btnDelete" onclick="deleteAppointment('${data[i]._id}')">X</button> Cancelar </div>
     </div>`
   }
 }
@@ -72,3 +67,13 @@ function deleteAppointment(data) {
     document.location.reload(true)
   })
 }
+
+// -> UPDATE DB INFORMATION
+function deleteAppointment(data) {
+  api.delete(`/${sessionStorage.place}/${data}`)
+  .then(({ data }) => {
+    alert(data.message);
+    document.location.reload(true)
+  })
+}
+

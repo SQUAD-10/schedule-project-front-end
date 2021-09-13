@@ -29,7 +29,7 @@ header {
   display: flex;
   justify-content: center;
   height: 25rem;
-  background: var(--blue);
+  background: var(--white);
   color: var(--orange);
 }
 
@@ -122,24 +122,37 @@ form select {
 .options {
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
-}
-
-.options div {
-  display: flex;
   align-items: center;
+  justify-content: center;
+  font-size: 1rem;
 }
 
-.options button {
+.btnDelete {
   width: 3rem;
   height: 3rem;
-  margin: 0 1rem;
-  border-radius: 1.5rem;
   cursor: pointer;
+  background-color: transparent;
+  border: 0.35rem solid var(--light-orange);
+  border-radius: 0.5rem;
+  color: var(--light-orange);
+  font-size: 2.2rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
 }
 
 #board {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+modal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 2rem;
+  background-color: var(--white);
+  border-radius: 0.5rem;
+  width: 80rem;
+  margin-top: 2rem;
 }
