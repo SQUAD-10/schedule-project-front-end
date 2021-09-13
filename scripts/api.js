@@ -2,6 +2,7 @@ const api = axios.create({
   baseURL: "http://localhost:3000",
 });
 
+// -> POST INFORMATION IN DB
 function setAppointment() {
   if(sessionStorage.date == '') {
     window.alert('É preciso escolher uma data ou uma nova data')
@@ -14,20 +15,6 @@ function setAppointment() {
     })
     .then(({ data }) => {
       console.log(data);
-      /*
-      const contentContainer = document.querySelector(".data");
-
-      const userName = document.createElement("h2");
-
-      userName.textContent = sessionStorage.name;
-
-      const userDate = document.createElement("h3");
-
-      userDate.textContent = sessionStorage.localDate;
-
-      contentContainer.appendChild(userName);
-      contentContainer.appendChild(userDate);
-      */
 
       sessionStorage.date = '';
       sessionStorage.localDate = '';
@@ -35,40 +22,53 @@ function setAppointment() {
   }
 }
 
-
+// -> GET AND DISPLAY DB INFORMATION
 function myAppointments() {
   api.get(`/${sessionStorage.place}/${sessionStorage.email}`)
   .then(({data}) => {
     return renderData(data)
   })
-  .catch(err => {
+  .catch((err) => {
+    return renderEmpty()
   });
 }
+setTimeout(myAppointments(), 100)
 
 function renderData(data) {
-  const myAppointments = document.querySelector("#appointment");
-  const info = document.querySelector(".info");
+  const appointment = document.querySelector(".appointment");
+  const message = document.querySelector(".message");
+  message.textContent = ''
 
   for(let i = 0; i < data.length; i++) {
-    info.innerHTML +=
+    appointment.innerHTML +=
     `<div class="wrapper">
 
-      <div class="infoText">
+      <div class="info">
         Nome: ${data[i].name} </br>
         Email: ${data[i].email} </br>
         Data: ${data[i].date.slice(8,10) + data[i].date.slice(4,8) + data[i].date.slice(0,4)} </br>
       </div>
 
       <div class="options">
-       <div> <button type="button" onclick="delete()"></button> Cancelar </div>
+       <div> <button onclick="deleteAppointment('${data[i]._id}')"></button> Cancelar </div>
        <div> <button type="button" onclick="update()"></button> Alterar </div>
       </div>
 
     </div>`
-
-    myAppointments.appendChild(info);
   }
 }
 
-setTimeout(myAppointments(), 100)
+function renderEmpty() {
+  const message = document.querySelector(".message");
+  message.innerHTML = "Não há agendamentos no momento."
+}
 
+
+// -> DELETE DB INFORMATION
+function deleteAppointment(data) {
+  api.delete(`/${sessionStorage.place}/${data}`)
+  .then(({ data }) => {
+    alert(data.message);
+    document.location.reload(true)
+  })
+}

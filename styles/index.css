@@ -50,7 +50,7 @@ main {
 }
 
 form,
-.info,
+.appointment,
 .calendar-section {
   display: flex;
   flex-direction: column;
@@ -111,15 +111,12 @@ form select {
   margin-bottom: 2rem;
   border: 0.1rem solid var(--light-orange);
   border-radius: 1rem;
-}
-
-.infoText {
-  display: flex;
-  flex-direction: column;
+  margin-top: 2rem;
 }
 
 .info {
-  padding: 2rem;
+  display: flex;
+  flex-direction: column;
 }
 
 .options {
@@ -138,4 +135,11 @@ form select {
   height: 3rem;
   margin: 0 1rem;
   border-radius: 1.5rem;
+  cursor: pointer;
+}
+
+#board {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
