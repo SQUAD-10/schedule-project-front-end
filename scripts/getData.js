@@ -92,7 +92,7 @@ function showDate() {
 }
 
 function goBack() {
-  window.location.href = '/index.html'
+  window.location.href = '/calendar.html'
 }
 
 function toMyAppointments() {

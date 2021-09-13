@@ -44,9 +44,9 @@ function renderData(data) {
     `<div class="wrapper">
 
       <div class="info">
-        Nome: ${data[i].name} </br>
-        Email: ${data[i].email} </br>
-        Data: ${data[i].date.slice(8,10) + data[i].date.slice(4,8) + data[i].date.slice(0,4)} </br>
+        <strong> Nome: </strong>  ${data[i].name} </br>
+        <strong> Email: </strong> ${data[i].email} </br>
+        <strong> Data: </strong>  ${data[i].date.slice(8,10) + data[i].date.slice(4,8) + data[i].date.slice(0,4)} </br>
       </div>
        <div class="options"> <button class="btnDelete" onclick="deleteAppointment('${data[i]._id}')">X</button> Cancelar </div>
     </div>`
@@ -58,7 +58,6 @@ function renderEmpty() {
   message.innerHTML = "Não há agendamentos no momento."
 }
 
-
 // -> DELETE DB INFORMATION
 function deleteAppointment(data) {
   api.delete(`/${sessionStorage.place}/${data}`)
@@ -67,13 +66,3 @@ function deleteAppointment(data) {
     document.location.reload(true)
   })
 }
-
-// -> UPDATE DB INFORMATION
-function deleteAppointment(data) {
-  api.delete(`/${sessionStorage.place}/${data}`)
-  .then(({ data }) => {
-    alert(data.message);
-    document.location.reload(true)
-  })
-}
-
