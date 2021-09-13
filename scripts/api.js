@@ -47,17 +47,28 @@ function myAppointments() {
 
 function renderData(data) {
   const myAppointments = document.querySelector("#appointment");
-  const Appointment = document.createElement("span");
+  const info = document.querySelector(".info");
 
   for(let i = 0; i < data.length; i++) {
-    Appointment.innerHTML += `<div>
-    Nome: ${data[i].name} </br>
-    Email: ${data[i].email} </br>
-    Data: ${data[i].date.slice(8,10) + data[i].date.slice(4,8) + data[i].date.slice(0,4)} </br>
+    info.innerHTML +=
+    `<div class="wrapper">
+
+      <div class="infoText">
+        Nome: ${data[i].name} </br>
+        Email: ${data[i].email} </br>
+        Data: ${data[i].date.slice(8,10) + data[i].date.slice(4,8) + data[i].date.slice(0,4)} </br>
+      </div>
+
+      <div class="options">
+       <div> <button type="button" onclick="delete()"></button> Cancelar </div>
+       <div> <button type="button" onclick="update()"></button> Alterar </div>
+      </div>
+
     </div>`
 
-    myAppointments.appendChild(Appointment);
+    myAppointments.appendChild(info);
   }
 }
 
 setTimeout(myAppointments(), 100)
+

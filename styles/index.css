@@ -50,7 +50,7 @@ main {
 }
 
 form,
-span,
+.info,
 .calendar-section {
   display: flex;
   flex-direction: column;
@@ -102,4 +102,40 @@ form select {
   background-color: var(--blue);
   color: var(--white);
   font-size: 2rem;
+}
+
+.wrapper {
+  display: flex;
+  width: 80rem;
+  justify-content: space-around;
+  margin-bottom: 2rem;
+  border: 0.1rem solid var(--light-orange);
+  border-radius: 1rem;
+}
+
+.infoText {
+  display: flex;
+  flex-direction: column;
+}
+
+.info {
+  padding: 2rem;
+}
+
+.options {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.options div {
+  display: flex;
+  align-items: center;
+}
+
+.options button {
+  width: 3rem;
+  height: 3rem;
+  margin: 0 1rem;
+  border-radius: 1.5rem;
 }
