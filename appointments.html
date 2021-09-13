@@ -16,16 +16,12 @@
   </header>
 
   <main>
-    <form id="form" action="" onsubmit="saveUser(); return false">
-      <label for="name">Nome:</label>
-      <input type="text" id="name" name="name" required>
-      <label for="email">E-mail:</label>
-      <input type="email" id="email" name="email" required>
-    </form>
+    <div class="container">
+      <div id="appointment"></div>
+    </div>
 
     <div class="buttons">
-      <button form="form">Agendar data</button>
-      <button onclick="toMyAppointments()">Meus agendamentos</button>
+      <button onclick="goBack()">Voltar</button>
     </div>
   </main>
 

@@ -94,3 +94,7 @@ function showDate() {
 function goBack() {
   window.location.href = '/index.html'
 }
+
+function toMyAppointments() {
+  window.location.href = '/appointments.html'
+}

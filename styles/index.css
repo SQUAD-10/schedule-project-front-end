@@ -50,6 +50,7 @@ main {
 }
 
 form,
+span,
 .calendar-section {
   display: flex;
   flex-direction: column;
@@ -59,6 +60,10 @@ form,
   border-radius: 0.5rem;
   width: 80rem;
   margin-top: 2rem;
+}
+
+span div {
+  margin-bottom: 2rem;
 }
 
 form input,
