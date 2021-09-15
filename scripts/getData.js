@@ -16,117 +16,130 @@ function savePlace() {
 
 const calendarDay = document.querySelectorAll('.cal-body__day');
 const calendarDayToday = document.querySelectorAll('.cal-day__day--today');
-const calendarDaySelected = document.querySelectorAll('.cal-day__day--selected');
+const currentDay = calendarDayToday[0].innerText
+
 const calendarMonth = document.querySelector('.cal-month__current')
-//console.log(calendarDayToday[0])
-//console.log(calendarMonth)
+const currentMonth = calendarMonth.innerText.slice(0, -5)
+const currentYear = calendarMonth.innerText.slice(-4)
 
 const day = []
 const today = []
 const month = []
-const monthNow = calendarMonth.innerText.slice(0, -5)
+const thisMonth = []
 const year = []
+const thisYear = []
+
+thisYear.push(currentYear)
+changeNameToNumber(currentMonth)
 
 function saveCalendarDate() {
   for(let i = 0; i < calendarDay.length; i++) {
 
-    // -> ADD DAY
+    // -> ADD DAY AND TODAY
     calendarDay[i].addEventListener('mousedown', () => {
-      let selectDay = calendarDay[i].innerText
-      selectDay = selectDay.padStart(2, '0')
-      day.splice(0, 1, selectDay)
-
-      let selectToday = calendarDayToday[0].innerText
-      today.splice(0, 1, selectToday)
+      let selectedDay = calendarDay[i].innerText
+      selectedDay = selectedDay.padStart(2, '0')
+      day.splice(0, 1, selectedDay)
+      today.splice(0, 1, currentDay)
     })
 
     // -> ADD MONTH AND YEAR
     calendarDay[i].addEventListener('click', () => {
-      let selectMonth = calendarMonth.innerText
-      year.splice(0, 1, selectMonth.slice(-4))
-      changeNameToNumber(selectMonth.slice(0, -5), monthNow)
+      let selectedMonth = calendarMonth.innerText
+      year.splice(0, 1, selectedMonth.slice(-4))
+      changeNameToNumber(selectedMonth.slice(0, -5))
+      verifyAndSetDate()
     })
   }
 }
 saveCalendarDate()
 
-function changeNameToNumber(selectedMonth, currentMonth) {
-  let selectedMonthNumber = ''
-  let currentMonthNumber = ''
+function changeNameToNumber(monthName) {
+  let monthNumber = ''
 
-  if(selectedMonth || currentMonth == 'janeiro') {
-    selectedMonthNumber = selectedMonth.replace(selectedMonth, '01')
-    currentMonthNumber = currentMonth.replace(currentMonth, '01')
+  switch(monthName) {
+    case 'janeiro':
+      monthNumber = '01'
+      break;
+    case 'fevereiro':
+      monthNumber = '02'
+      break;
+    case 'março':
+      monthNumber = '03'
+      break;
+    case 'abril':
+      monthNumber = '04'
+      break;
+    case 'maio':
+      monthNumber = '05'
+      break;
+    case 'junho':
+      monthNumber = '06'
+      break;
+    case 'julho':
+      monthNumber = '07'
+      break;
+    case 'agosto':
+      monthNumber = '08'
+      break;
+    case 'setembro':
+      monthNumber = '09'
+      break;
+    case 'outubro':
+      monthNumber = '10'
+      break;
+    case 'novembro':
+      monthNumber = '11'
+      break;
+    case 'dezembro':
+      monthNumber = '12'
+      break;
   }
-  else if (selectedMonth || currentMonth == 'fevereiro') {
-    selectedMonthNumber = selectedMonth.replace(selectedMonth, '02')
-    currentMonthNumber = currentMonth.replace(currentMonth, '02')
-  }
-  else if (selectedMonth || currentMonth == 'março') {
-    selectedMonthNumber = selectedMonth.replace(selectedMonth, '03')
-    currentMonthNumber = currentMonth.replace(currentMonth, '03')
-  }
-  else if (selectedMonth || currentMonth == 'abril') {
-    selectedMonthNumber = selectedMonth.replace(selectedMonth, '04')
-    currentMonthNumber = currentMonth.replace(currentMonth, '04')
-  }
-  else if (selectedMonth || currentMonth == 'maio') {
-    selectedMonthNumber = selectedMonth.replace(selectedMonth, '05')
-    currentMonthNumber = currentMonth.replace(currentMonth, '05')
-  }
-  else if (selectedMonth || currentMonth == 'junho') {
-    selectedMonthNumber = selectedMonth.replace(selectedMonth, '06')
-    currentMonthNumber = currentMonth.replace(currentMonth, '06')
-  }
-  else if (selectedMonth || currentMonth == 'julho') {
-    selectedMonthNumber = selectedMonth.replace(selectedMonth, '07')
-    currentMonthNumber = currentMonth.replace(currentMonth, '07')
-  }
-  else if (selectedMonth || currentMonth == 'agosto') {
-    selectedMonthNumber = selectedMonth.replace(selectedMonth, '08')
-    currentMonthNumber = currentMonth.replace(currentMonth, '08')
-  }
-  else if (selectedMonth || currentMonth == 'setembro') {
-    selectedMonthNumber = selectedMonth.replace(selectedMonth, '09')
-    currentMonthNumber = currentMonth.replace(currentMonth, '09')
-  }
-  else if (selectedMonth || currentMonth == 'outubro') {
-    selectedMonthNumber = selectedMonth.replace(selectedMonth, '10')
-    currentMonthNumber = currentMonth.replace(currentMonth, '10')
-  }
-  else if (selectedMonth || currentMonth == 'novembro') {
-    selectedMonthNumber = selectedMonth.replace(selectedMonth, '11')
-    currentMonthNumber = currentMonth.replace(currentMonth, '11')
-  }
-  else if (selectedMonth || currentMonth == 'dezembro') {
-    selectedMonthNumber = selectedMonth.replace(selectedMonth, '12')
-    currentMonthNumber = currentMonth.replace(currentMonth, '12')
-  }
-  month.splice(0, 1, selectedMonthNumber)
-  verifyAndSetDate(currentMonthNumber)
-}
 
-function verifyAndSetDate(currentMonthNumber) {
-  let thisMonth = currentMonthNumber
-  thisMonth = parseInt(thisMonth)
-
-  const dayNum = parseInt(day[0])
-  const monthNum = parseInt(month[0])
-  const todayNum = parseInt(today[0])
-
-  if (dayNum > todayNum && monthNum <= thisMonth) {
-    console.log('Good')
+  if (thisMonth.length == 0) {
+    thisMonth.push(monthNumber)
+  }
+  if (month.length == 0) {
+    month.push(monthNumber)
   }
   else {
-    console.log('Bad')
+    month.splice(0, 1, monthNumber)
   }
+}
+
+function verifyAndSetDate() {
+  let todayNumber = parseInt(today)
+  let dayNumber = parseInt(day)
+  let thisMonthNumber = parseInt(thisMonth)
+  let monthNumber = parseInt(month)
+  let thisYearNumber = parseInt(thisYear)
+  let yearNumber = parseInt(year)
+
+  if (yearNumber >= thisYearNumber && monthNumber == thisMonthNumber && dayNumber > todayNumber) {
+    console.log('Pode agendar')
+  }
+  else if (yearNumber >= thisYearNumber && monthNumber > thisMonthNumber) {
+    console.log('Pode agendar')
+  }
+  else if (yearNumber > thisYearNumber) {
+    console.log('Pode agendar')
+  }
+  else {
+    console.log('Não pode agendar')
+  }
+
+/*
+  const todayDate = `${yearNumber}/${thisMonthNumber}/${todayNumber}`
+  console.log(todayDate)
+
   const dateDisplay = document.querySelector('.show-date');
-  const localDate = dateDisplay.textContent = `${day}/${month}/${year}`
+  const localDate = dateDisplay.textContent = `${dayNumber}/${monthNumber}/${yearNumber}`
   sessionStorage.setItem('localDate', localDate)
 
-  const finalDate = `${year}/${month}/${day}`
+  const finalDate = `${yearNumber}/${monthNumber}/${dayNumber}`
   sessionStorage.setItem('date', finalDate)
-  console.log(finalDate)
+  console.log('FINAL:' + finalDate)
+*/
 }
 
 function goBack() {

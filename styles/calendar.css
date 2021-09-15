@@ -94,10 +94,3 @@
   border-radius: 50%;
   color: #111;
 }
-
-.cal-day__day--selected-old {
-  background-color: var(--black);
-  box-shadow: 0 5px 10px -5px rgba(0, 0, 0, 0.75);
-  border-radius: 50%;
-  color: #111;
-}
