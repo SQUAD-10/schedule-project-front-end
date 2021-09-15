@@ -54,6 +54,9 @@ function saveCalendarDate() {
 }
 saveCalendarDate()
 
+const showDateToday = `${today}/${thisMonth}/${thisYear}`
+sessionStorage.setItem('dateToday', showDateToday)
+
 function setProfile() {
   const helloUser = document.querySelector('.hello')
   const userEmail = document.querySelector('.email')
@@ -61,7 +64,7 @@ function setProfile() {
 
   helloUser.textContent = `Olá, ${sessionStorage.name}`
   userEmail.textContent = `${sessionStorage.email}`
-  dateToday.textContent = `${today}/${thisMonth}/${thisYear}`
+  dateToday.textContent = `${sessionStorage.dateToday}`
 }
 setProfile()
 

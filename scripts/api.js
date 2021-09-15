@@ -44,12 +44,14 @@ function renderData(data) {
     `<div class="wrapper">
 
       <div class="info">
-        <strong> Data: </strong>  ${data[i].date.slice(8,10) + data[i].date.slice(4,8) + data[i].date.slice(0,4)}
+        <strong> Data: </strong> <span></span> ${data[i].date.slice(8,10) + data[i].date.slice(4,8) + data[i].date.slice(0,4)}
       </div>
-       <div class="options"> <button class="btnDelete" onclick="deleteAppointment('${data[i]._id}')">X</button> Cancelar </div>
+      <img class="btnDelete" src="images/delete.svg" onclick="deleteAppointment('${data[i]._id}')"/>
     </div>`
   }
 }
+
+setProfile()
 
 function renderEmpty() {
   const message = document.querySelector(".message");

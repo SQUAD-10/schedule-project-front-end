@@ -8,16 +8,15 @@
 }
 
 :root {
-  --grey: #f0f0f0f0;
-  --dark-grey: #c4c4c4;
   --white: #fcfcfc;
-  --black: #333;
+  --light-grey: #f0f0f0f0;
+  --medium-grey: #c4c4c4;
+  --dark-grey: #6e6e76;
+  --black: #4e4b59;
   --light-blue: #6263ab;
-  --medium-blue: #5251a2;
   --blue: #36357e;
   --light-orange: #fe885c;
-  --medium-orange: #fe662e;
-  --orange: #fe5517;
+  --orange: #fc6027;
 }
 
 html {
@@ -39,7 +38,6 @@ header {
   height: 20rem;
   width: 80rem;
   background: var(--white);
-  color: var(--orange);
 }
 
 .container .logo {
@@ -72,6 +70,21 @@ header {
   margin-top: 0.5rem;
 }
 
+.hello {
+  font-size: 1.8rem;
+  color: var(--black);
+}
+
+.email {
+  font-size: 1.6rem;
+  color: var(--dark-grey);
+}
+
+.today {
+  font-size: 1.4rem;
+  color: var(--dark-grey);
+}
+
 .container {
   display: flex;
   flex-direction: column;
@@ -84,7 +97,7 @@ header {
 .div-line {
   height: 0.2rem;
   width: 80rem;
-  background-color: var(--dark-grey);
+  background-color: var(--medium-grey);
 }
 
 .main-line {
@@ -92,6 +105,8 @@ header {
   justify-content: center;
   align-items: center;
   min-height: 10rem;
+  font-weight: 700;
+  font-size: 1.9rem;
   background-color: var(--white);
 }
 
@@ -105,7 +120,7 @@ main {
   justify-content: center;
   align-items: center;
   width: 100vw;
-  background-color: var(--grey);
+  background-color: var(--light-grey);
 }
 
 .white {
@@ -133,13 +148,13 @@ form select {
   width: 35rem;
   height: 6.5rem;
   border-radius: 0.5rem;
-  background-color: var(--grey);
+  background-color: var(--light-grey);
   border: 0.1rem solid transparent;
-  font-size: 2rem;
+  font-size: 2.2rem;
 }
 
 form input:focus {
-  border: 0.1rem solid var(--medium-orange);
+  border: 0.1rem solid var(--orange);
   transition: 1s ease all;
 }
 
@@ -148,7 +163,7 @@ form input:focus {
   padding: 0 1rem;
   width: 35rem;
   height: 4rem;
-  border: 0.1rem solid var(--medium-orange);
+  border: 0.1rem solid var(--orange);
   border-radius: 0.5rem;
   background-color: var(--white);
   font-size: 2rem;
@@ -167,10 +182,11 @@ form input:focus {
   background-color: var(--blue);
   color: var(--white);
   font-size: 2rem;
+  font-weight: 700;
 }
 
 .myAppointments {
-  background-color: var(--medium-orange);
+  background-color: var(--orange);
 }
 
 .show-date {
@@ -192,7 +208,7 @@ form input:focus {
   align-items: center;
   padding: 0 2rem;
   margin-top: 2rem;
-  border: 0.1rem solid var(--medium-orange);
+  border: 0.1rem solid var(--orange);
   background-color: var(--white);
 }
 
@@ -201,26 +217,23 @@ form input:focus {
   justify-content: start;
   align-items: center;
   padding-left: 2rem;
-  font-size: 2rem;
+  font-size: 1.8rem;
   height: 3rem;
   width: inherit;
-  border-left: 0.5rem solid var(--medium-orange);
+  border-left: 0.5rem solid var(--orange);
 }
 
 .info strong {
-  color: var(--medium-blue);
+  color: var(--blue);
   font-weight: 700;
+}
+.info span {
+  width: 2rem;
 }
 
 .btnDelete {
   width: 3rem;
   height: 3rem;
   cursor: pointer;
-  background-color: transparent;
-  border: 0.35rem solid var(--medium-orange);
-  border-radius: 0.5rem;
-  color: var(--medium-orange);
-  font-size: 2.2rem;
-  font-weight: 700;
   margin-bottom: 0.5rem;
 }
