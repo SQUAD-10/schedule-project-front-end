@@ -7,7 +7,7 @@ function saveUser() {
 }
 
 function savePlace() {
-  const place = document.querySelector('#options').value;
+  const place = document.querySelector('.select').value;
   sessionStorage.setItem('place', place)
   console.log(place)
   console.log(sessionStorage)

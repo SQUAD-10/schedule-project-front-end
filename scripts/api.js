@@ -29,15 +29,16 @@ function myAppointments() {
     return renderData(data)
   })
   .catch((err) => {
-    return renderEmpty()
+    const appointment = document.querySelector(".appointment");
+    if (appointment.innerText == '') {
+      renderEmpty()
+    }
   });
 }
 setTimeout(myAppointments(), 100)
 
 function renderData(data) {
   const appointment = document.querySelector(".appointment");
-  const message = document.querySelector(".message");
-  message.textContent = ''
 
   for(let i = 0; i < 5; i++) {
     appointment.innerHTML +=
