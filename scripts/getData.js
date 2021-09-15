@@ -13,7 +13,6 @@ function savePlace() {
   console.log(sessionStorage)
 }
 
-
 const calendarDay = document.querySelectorAll('.cal-body__day');
 const calendarDayToday = document.querySelectorAll('.cal-day__day--today');
 const currentDay = calendarDayToday[0].innerText
@@ -30,7 +29,9 @@ const year = []
 const thisYear = []
 
 thisYear.push(currentYear)
+today.push(currentDay)
 changeNameToNumber(currentMonth)
+
 
 function saveCalendarDate() {
   for(let i = 0; i < calendarDay.length; i++) {
@@ -40,7 +41,6 @@ function saveCalendarDate() {
       let selectedDay = calendarDay[i].innerText
       selectedDay = selectedDay.padStart(2, '0')
       day.splice(0, 1, selectedDay)
-      today.splice(0, 1, currentDay)
     })
 
     // -> ADD MONTH AND YEAR
@@ -53,6 +53,17 @@ function saveCalendarDate() {
   }
 }
 saveCalendarDate()
+
+function setProfile() {
+  const helloUser = document.querySelector('.hello')
+  const userEmail = document.querySelector('.email')
+  const dateToday = document.querySelector('.today')
+
+  helloUser.textContent = `Olá, ${sessionStorage.name}`
+  userEmail.textContent = `${sessionStorage.email}`
+  dateToday.textContent = `${today}/${thisMonth}/${thisYear}`
+}
+setProfile()
 
 function changeNameToNumber(monthName) {
   let monthNumber = ''

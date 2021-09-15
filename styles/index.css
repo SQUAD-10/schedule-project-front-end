@@ -34,11 +34,20 @@ body {
 
 header {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   height: 20rem;
+  width: 80rem;
   background: var(--white);
   color: var(--orange);
+}
+
+header .logo {
+}
+
+header .user {
+  font-size: 1.5rem;
+  color: var(--black);
 }
 
 .container {
@@ -103,10 +112,16 @@ form select {
   height: 6.5rem;
   border-radius: 0.5rem;
   background-color: var(--grey);
+  border: 0.1rem solid transparent;
   font-size: 2rem;
 }
 
-#options {
+form input:focus {
+  border: 0.1rem solid var(--medium-orange);
+  transition: 1s ease all;
+}
+
+.select {
   margin: 2rem 0;
   padding: 0 1rem;
   width: 35rem;
@@ -140,7 +155,6 @@ form select {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: var(--dark-grey);
   color: var(--black);
   height: 4rem;
   width: 35rem;
@@ -174,14 +188,6 @@ form select {
 .info strong {
   color: var(--medium-blue);
   font-weight: bold;
-}
-
-.options {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: 1rem;
 }
 
 .btnDelete {

@@ -1,7 +1,6 @@
 .calendar {
   width: 35rem;
   background-color: var(--white);
-  border: 0.2rem solid var(--medium-orange);
   border-radius: 0.5rem;
 }
 
