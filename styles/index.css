@@ -27,7 +27,7 @@ html {
 body {
   display: flex;
   justify-content: center;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Roboto", sans-serif;
   color: var(--black);
   background: var(--white);
 }
@@ -187,7 +187,7 @@ form input:focus {
 
 .info strong {
   color: var(--medium-blue);
-  font-weight: bold;
+  font-weight: 700;
 }
 
 .btnDelete {
@@ -199,6 +199,6 @@ form input:focus {
   border-radius: 0.5rem;
   color: var(--medium-orange);
   font-size: 2.2rem;
-  font-weight: bold;
+  font-weight: 700;
   margin-bottom: 0.5rem;
 }
