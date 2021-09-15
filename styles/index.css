@@ -34,20 +34,42 @@ body {
 
 header {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column;
+  justify-content: flex-end;
   height: 20rem;
   width: 80rem;
   background: var(--white);
   color: var(--orange);
 }
 
-header .logo {
+.container .logo {
+  width: 17rem;
+  height: 6.5rem;
 }
 
-header .user {
+.logo-picture-area {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 2rem;
+}
+
+.logo-picture-area .logo {
+  width: 10rem;
+  height: 4rem;
+}
+
+.profile {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: flex-end;
   font-size: 1.5rem;
   color: var(--black);
+  margin-bottom: 1rem;
+}
+
+.profile div {
+  margin-top: 0.5rem;
 }
 
 .container {
