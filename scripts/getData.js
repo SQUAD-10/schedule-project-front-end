@@ -115,31 +115,44 @@ function verifyAndSetDate() {
   let thisYearNumber = parseInt(thisYear)
   let yearNumber = parseInt(year)
 
+  const calendarDaySelected = document.querySelector('.cal-day__day--selected')
+
   if (yearNumber >= thisYearNumber && monthNumber == thisMonthNumber && dayNumber > todayNumber) {
+    showDate()
+    setDate()
     console.log('Pode agendar')
   }
   else if (yearNumber >= thisYearNumber && monthNumber > thisMonthNumber) {
+    showDate()
+    setDate()
     console.log('Pode agendar')
   }
   else if (yearNumber > thisYearNumber) {
+    showDate()
+    setDate()
     console.log('Pode agendar')
   }
   else {
+    showDate()
+    showWarning()
+    calendarDaySelected.setAttribute('style', 'filter: grayscale()')
     console.log('Não pode agendar')
   }
+}
 
-/*
-  const todayDate = `${yearNumber}/${thisMonthNumber}/${todayNumber}`
-  console.log(todayDate)
-
+function showDate() {
   const dateDisplay = document.querySelector('.show-date');
-  const localDate = dateDisplay.textContent = `${dayNumber}/${monthNumber}/${yearNumber}`
+  const localDate = dateDisplay.textContent = `${day}/${month}/${year}`
   sessionStorage.setItem('localDate', localDate)
+}
 
-  const finalDate = `${yearNumber}/${monthNumber}/${dayNumber}`
+function setDate() {
+  const finalDate = `${year}/${month}/${day}`
   sessionStorage.setItem('date', finalDate)
-  console.log('FINAL:' + finalDate)
-*/
+}
+
+function showWarning() {
+
 }
 
 function goBack() {
