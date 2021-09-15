@@ -8,7 +8,8 @@
 }
 
 :root {
-  --bg-color: #f0f0f0f0;
+  --grey: #f0f0f0f0;
+  --dark-grey: #c4c4c4;
   --white: #fcfcfc;
   --black: #333;
   --light-blue: #6263ab;
@@ -24,26 +25,47 @@ html {
 }
 
 body {
+  display: flex;
+  justify-content: center;
   font-family: "Montserrat", sans-serif;
   color: var(--black);
-  background: var(--bg-color);
+  background: var(--white);
 }
 
 header {
   display: flex;
   justify-content: center;
-  height: 25rem;
+  align-items: center;
+  height: 20rem;
   background: var(--white);
   color: var(--orange);
 }
 
 .container {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 2rem;
   width: 80rem;
   font-size: 3rem;
+}
+
+.div-line {
+  height: 0.2rem;
+  width: 80rem;
+  background-color: var(--dark-grey);
+}
+
+.main-line {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 10rem;
+  background-color: var(--white);
+}
+
+.title {
+  margin: 1rem 0;
 }
 
 main {
@@ -51,6 +73,12 @@ main {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: 100vw;
+  background-color: var(--grey);
+}
+
+.white {
+  background-color: var(--white);
 }
 
 form,
@@ -61,7 +89,6 @@ form,
   font-size: 2rem;
   border-radius: 0.5rem;
   width: 80rem;
-  margin-top: 2rem;
 }
 
 span div {
@@ -72,30 +99,31 @@ form input,
 form select {
   margin: 2rem 0;
   padding: 0 1rem;
-  width: 30rem;
-  height: 4rem;
+  width: 35rem;
+  height: 6.5rem;
   border-radius: 0.5rem;
+  background-color: var(--grey);
+  font-size: 2rem;
+}
+
+#options {
+  margin: 2rem 0;
+  padding: 0 1rem;
+  width: 35rem;
+  height: 4rem;
   border: 0.1rem solid var(--medium-orange);
+  border-radius: 0.5rem;
+  background-color: var(--white);
   font-size: 2rem;
 }
 
 .buttons {
   display: flex;
-  margin-top: 2rem;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border-radius: 0.5rem;
-  width: 80rem;
-}
-
-.buttons button {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 30rem;
-  height: 8rem;
+  width: 35rem;
+  height: 6rem;
   margin: 2rem 0;
   padding: 0 1rem;
   border-radius: 0.5rem;
@@ -104,7 +132,7 @@ form select {
   font-size: 2rem;
 }
 
-.buttons .myAppointments {
+.myAppointments {
   background-color: var(--medium-orange);
 }
 
@@ -112,10 +140,10 @@ form select {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: var(--blue);
-  color: var(--white);
+  background-color: var(--dark-grey);
+  color: var(--black);
   height: 4rem;
-  width: 30rem;
+  width: 35rem;
   border-radius: 0.5rem;
   margin-bottom: 2rem;
 }
@@ -123,20 +151,23 @@ form select {
 .wrapper {
   display: flex;
   width: 80rem;
-  height: 10rem;
+  height: 8rem;
   justify-content: space-between;
   align-items: center;
   padding: 0 2rem;
-  margin-bottom: 2rem;
+  margin-top: 2rem;
   border: 0.1rem solid var(--medium-orange);
-  border-radius: 1rem;
-  margin-bottom: 2rem;
+  background-color: var(--white);
 }
 
 .info {
+  display: flex;
+  justify-content: start;
+  align-items: center;
   padding-left: 2rem;
   font-size: 2rem;
-  height: 7rem;
+  height: 3rem;
+  width: inherit;
   border-left: 0.5rem solid var(--medium-orange);
 }
 

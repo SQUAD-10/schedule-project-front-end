@@ -9,22 +9,27 @@
   <title>OrangeBox</title>
 </head>
 <body>
-  <header>
-    <div class="container">
-      <h1>OrangeBox</h1>
-    </div>
-  </header>
+  <div class="container">
+    <header>
+        <h1>OrangeBox</h1>
+    </header>
 
-  <main>
-    <div class="container">
-        <div class="message"></div>
-        <div class="appointment"></div>
-    </div>
+    <div class="div-line"></div>
+    <section class="main-line">
+      <div class="title">Agendamentos</div>
+      <div class="message"></div>
+    </section>
 
-    <div class="buttons">
-      <button onclick="goBack()">Voltar</button>
-    </div>
-  </main>
+    <main>
+      <div class="container">
+          <div class="appointment"></div>
+      </div>
+
+      <div class="buttons">
+        <button class="buttons" onclick="goBack()">Voltar</button>
+      </div>
+    </main>
+  </div>
 
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   <script src="scripts/getData.js"></script>

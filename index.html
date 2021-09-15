@@ -10,27 +10,26 @@
 </head>
 
 <body>
-  <header>
-    <div class="container">
-      <h1>OrangeBox</h1>
-    </div>
-  </header>
+  <div class="container">
+    <header>
+      <div class="container">
+        <h1>OrangeBox</h1>
+      </div>
+    </header>
 
-  <main>
-    <form id="form" action="" onsubmit="saveUser(); return false">
-      <label for="name">Nome:</label>
-      <input type="text" id="name" name="name" required>
-      <label for="email">E-mail:</label>
-      <input type="email" id="email" name="email" required>
-    </form>
+    <main class="white">
+      <form id="form" action="" onsubmit="saveUser(); return false">
+        <input type="text" id="name" name="name" placeholder="Nome" required>
+        <input type="email" id="email" name="email" placeholder="E-mail" required>
+      </form>
 
-    <div class="buttons">
-      <button form="form">Entrar</button>
-    </div>
-  </main>
+
+      <button class="buttons" form="form">Entrar</button>
+
+    </main>
+  </div>
 
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   <script src="scripts/getData.js"></script>
-  <script src="scripts/api.js"></script>
 </body>
 </html>

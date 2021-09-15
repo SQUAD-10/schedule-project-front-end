@@ -39,14 +39,14 @@ function renderData(data) {
   const message = document.querySelector(".message");
   message.textContent = ''
 
-  for(let i = 0; i < data.length; i++) {
+  for(let i = 0; i < 5; i++) {
     appointment.innerHTML +=
     `<div class="wrapper">
 
       <div class="info">
-        <strong> Nome: </strong>  ${data[i].name} </br>
-        <strong> Email: </strong> ${data[i].email} </br>
-        <strong> Data: </strong>  ${data[i].date.slice(8,10) + data[i].date.slice(4,8) + data[i].date.slice(0,4)} </br>
+        <div><strong> Nome: </strong>  ${data[i].name} </div>
+        <div><strong> Email: </strong> ${data[i].email} </div>
+        <div><strong> Data: </strong>  ${data[i].date.slice(8,10) + data[i].date.slice(4,8) + data[i].date.slice(0,4)} </div>
       </div>
        <div class="options"> <button class="btnDelete" onclick="deleteAppointment('${data[i]._id}')">X</button> Cancelar </div>
     </div>`

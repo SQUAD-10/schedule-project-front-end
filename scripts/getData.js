@@ -120,16 +120,19 @@ function verifyAndSetDate() {
   if (yearNumber >= thisYearNumber && monthNumber == thisMonthNumber && dayNumber > todayNumber) {
     showDate()
     setDate()
+    calendarDaySelected.removeAttribute('style', 'filter: grayscale()')
     console.log('Pode agendar')
   }
   else if (yearNumber >= thisYearNumber && monthNumber > thisMonthNumber) {
     showDate()
     setDate()
+    calendarDaySelected.removeAttribute('style', 'filter: grayscale()')
     console.log('Pode agendar')
   }
   else if (yearNumber > thisYearNumber) {
     showDate()
     setDate()
+    calendarDaySelected.removeAttribute('style', 'filter: grayscale()')
     console.log('Pode agendar')
   }
   else {
