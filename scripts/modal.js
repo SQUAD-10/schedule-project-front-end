@@ -1,63 +1,86 @@
+const modalWrapper = document.querySelector('.modal-wrapper')
+
+// APPOINTMENT PAGE MODAL
 function modalDelete(data) {
-  const modalWrapper = document.querySelector(".modal-wrapper")
-  modalWrapper.classList.add("active")
+  modalWrapper.classList.add('active')
 
-  const cancelButton = document.querySelector(".btn-cancel")
-  const confirmButton = document.querySelector(".btn-confirm")
+  const tag = document.querySelector('.white-tag')
+  tag.innerHTML = `
+    <h2>EXCLUIR AGENDAMENTO</h2>
+    <p>Deseja mesmo excluir este agendamento?</p>
+      <div class="option-buttons">
+        <button class="btn-cancel">NÃO</button>
+        <button class="btn-confirm">SIM</button>
+      </div>
+  `
+  const cancelButton = document.querySelector('.btn-cancel')
+  const confirmButton = document.querySelector('.btn-confirm')
 
-  cancelButton.addEventListener("click", () => {
-    modalDeleteClose()
+  cancelButton.addEventListener('click', () => {
+    modalClose()
   })
-  confirmButton.addEventListener("click", () => {
+  confirmButton.addEventListener('click', () => {
     deleteAppointment(data)
   })
-
-  function modalDeleteClose() {
-    modalWrapper.classList.remove("active")
-  }
 }
 
+//CALENDAR PAGE MODAL
 function modalRegister() {
+  modalWrapper.classList.add('active')
   const verifiedResult = verifyAndSetDate()
 
   if (verifiedResult == false) {
-    const modal = document.querySelector('.modal')
     const tag = document.querySelector('.white-tag')
-    modal.classList.add("small")
     tag.innerHTML = `
+      <h2>DATA INVÁLIDA</h2>
       <p>Não é possível agendar para ${showDateToday} ou datas anteriores</p>
       <div class="option-buttons">
         <button class="btn-ok">OK</button>
-      </div>`
+      </div>
+    `
+
     const btnOK = document.querySelector('.btn-ok')
     btnOK.addEventListener('click', () => {
-      modalRegisterClose()
+      modalClose()
     })
   }
+
   else {
+    const tag = document.querySelector('.white-tag')
+    const chosenDate = showDate()
+    tag.innerHTML = `
+      <h2>CONFIRMAR AGENDAMENTO</h2>
+      <p class="details">Deseja confirmar o agendamento para o dia ${chosenDate}?</p>
+        <div class="option-buttons">
+          <button class="btn-cancel">NÃO</button>
+          <button class="btn-confirm">SIM</button>
+        </div>
+    `
+    const cancelButton = document.querySelector('.btn-cancel')
+    const confirmButton = document.querySelector('.btn-confirm')
 
+    cancelButton.addEventListener('click', () => {
+      modalClose()
+    })
+    confirmButton.addEventListener('click', () => {
+      setAppointment()
+      modalConfirmation()
+    })
   }
+}
 
-  const modalWrapper = document.querySelector(".modal-wrapper")
-  modalWrapper.classList.add("active")
-
-
-
-  const cancelButton = document.querySelector(".btn-cancel")
-  const confirmButton = document.querySelector(".btn-confirm")
-
-  cancelButton.addEventListener("click", () => {
-    modalRegisterClose()
-  })
-  confirmButton.addEventListener("click", () => {
-    setAppointment()
-  })
-
-
+//CALENDAR PAGE APPOINTMENT CONFIRMATION
+function modalConfirmation() {
+  const tag = document.querySelector('.white-tag')
+  const chosenDate = showDate()
+    tag.innerHTML = `
+      <h2>CONFIRMADO</h2>
+      <p>Seu agendamento para o dia ${chosenDate} foi confirmado com sucesso</p>
+    `
   window.setTimeout( () => {
-    modalRegisterClose()}, 3000)
+    modalClose()}, 3000)
+}
 
-  function modalRegisterClose() {
-    modalWrapper.classList.remove("active")
-  }
+function modalClose() {
+  modalWrapper.classList.remove('active')
 }

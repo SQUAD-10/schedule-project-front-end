@@ -290,13 +290,9 @@ form input:focus {
 }
 
 .modal {
-  width: 60rem;
+  width: 35rem;
   margin: auto;
   font-size: 1.2rem;
-}
-
-.small {
-  width: 35rem;
 }
 
 .modal .orange-tag {
@@ -314,6 +310,11 @@ form input:focus {
   border-radius: 0 0 1rem 1rem;
   padding: 2rem;
   background-color: var(--white);
+}
+
+.modal .white-tag sleep {
+  visibility: hidden;
+  opacity: 0;
 }
 
 .modal .white-tag p {
@@ -355,4 +356,8 @@ form input:focus {
 }
 .option-buttons .btn-confirm:hover {
   opacity: 0.95;
+}
+
+.teste {
+  color: #db3f3f;
 }

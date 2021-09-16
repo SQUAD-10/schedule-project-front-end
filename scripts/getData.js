@@ -160,6 +160,8 @@ function showDate() {
   if (day.length > 0) {
     const localDate = dateDisplay.textContent = `${day}/${month}/${year}`
     sessionStorage.setItem('localDate', localDate)
+
+    return localDate
   }
 }
 
