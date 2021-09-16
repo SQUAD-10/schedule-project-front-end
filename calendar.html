@@ -119,14 +119,26 @@
 
       <div class="data"></div>
 
-      <button class="buttons" onclick="setAppointment()" >AGENDAR</button>
+      <button class="buttons" onclick="modalRegister()" >AGENDAR</button>
 
     </main>
   </div>
+
+  <!-- MODAL -->
+  <div class="modal-wrapper">
+    <div class="modal small">
+      <div class="orange-tag"></div>
+      <div class="white-tag">
+        <h2>AGENDAMENTO CONFIRMADO</h2>
+      </div>
+    </div>
+  </div>
+
   <script src="https://momentjs.com/downloads/moment-with-locales.js"></script>
   <script src="scripts/calendar.js"></script>
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   <script src="scripts/getData.js"></script>
   <script src="scripts/api.js"></script>
+  <script src="scripts/modal.js"></script>
 </body>
 </html>

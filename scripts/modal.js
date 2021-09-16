@@ -16,3 +16,17 @@ function modalDelete(data) {
     modalWrapper.classList.remove("active")
   }
 }
+
+function modalRegister() {
+  const modalWrapper = document.querySelector(".modal-wrapper")
+  modalWrapper.classList.add("active")
+
+  setAppointment()
+
+  window.setTimeout( () => {
+    modalRegisterClose()}, 3000)
+
+  function modalRegisterClose() {
+    modalWrapper.classList.remove("active")
+  }
+}

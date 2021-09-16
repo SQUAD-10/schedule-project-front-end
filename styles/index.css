@@ -295,6 +295,10 @@ form input:focus {
   font-size: 1.2rem;
 }
 
+.small {
+  width: 35rem;
+}
+
 .modal .orange-tag {
   height: 4rem;
   border-radius: 1rem 1rem 0 0;
@@ -333,7 +337,7 @@ form input:focus {
   padding: 0 1rem;
   border-radius: 0.5rem;
   color: var(--white);
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   font-weight: 700;
   cursor: pointer;
 }
