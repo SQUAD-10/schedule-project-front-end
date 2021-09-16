@@ -26,12 +26,13 @@
 
     <div class="div-line"></div>
     <section class="main-line">
-      <button class="buttons myAppointments" onclick="toMyAppointments()">MEUS AGENDAMENTOS</button>
+      <button id="btn-agenda" form="select-menu" class="buttons myAppointments">MEUS AGENDAMENTOS</button>
     </section>
 
     <main>
-      <form>
-        <select class="select" type="select" onclick="savePlace()">
+      <form id="select-menu">
+        <select class="select" type="select" onclick="savePlace(); return false" required>
+          <option disabled selected value>Selecione o Escritório</option>
           <option value="sao-paulo">São Paulo</option>
           <option value="santos">Santos</option>
         </select>
@@ -119,7 +120,7 @@
 
       <div class="data"></div>
 
-      <button class="buttons" onclick="modalRegister()">AGENDAR</button>
+      <button id="btn-send" class="buttons" form="select-menu">AGENDAR</button>
 
     </main>
   </div>

@@ -9,9 +9,23 @@ function saveUser() {
 function savePlace() {
   const place = document.querySelector('.select').value;
   sessionStorage.setItem('place', place)
+
+  const btnSend = document.querySelector('#btn-send')
+  btnSend.setAttribute('type', 'button')
+  btnSend.addEventListener('click', () => {
+    modalRegister()
+  })
+
+  const btnAgenda = document.querySelector('#btn-agenda')
+  btnAgenda.setAttribute('type', 'button')
+  btnAgenda.addEventListener('click', () => {
+    toMyAppointments()
+  })
+
   console.log(place)
   console.log(sessionStorage)
 }
+
 
 const calendarDay = document.querySelectorAll('.cal-body__day');
 const calendarDayToday = document.querySelectorAll('.cal-day__day--today');
