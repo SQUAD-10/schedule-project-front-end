@@ -120,6 +120,7 @@ main {
   justify-content: center;
   align-items: center;
   width: 100vw;
+  height: calc(100vh - 30.2rem);
   background-color: var(--light-grey);
 }
 
@@ -198,6 +199,12 @@ form input:focus {
   width: 35rem;
   border-radius: 0.5rem;
   margin-bottom: 2rem;
+}
+
+.message {
+  font-size: 2rem;
+  margin: 2rem 0;
+  padding: 2rem;
 }
 
 .wrapper {

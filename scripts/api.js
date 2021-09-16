@@ -22,6 +22,10 @@ function setAppointment() {
   }
 }
 
+// FIX CITY NAME
+let city = ''
+sessionStorage.place == 'santos' ? city = 'Santos' : city = 'São Paulo'
+
 // -> GET AND DISPLAY DB INFORMATION
 function myAppointments() {
   api.get(`/${sessionStorage.place}/${sessionStorage.email}`)
@@ -46,6 +50,7 @@ function renderData(data) {
 
       <div class="info">
         <strong> Data: </strong> <span></span> ${data[i].date.slice(8,10) + data[i].date.slice(4,8) + data[i].date.slice(0,4)}
+        <span></span> <strong> Unidade: </strong> <span></span> ${city}
       </div>
       <img class="btnDelete" src="images/delete.svg" onclick="deleteAppointment('${data[i]._id}')"/>
     </div>`
@@ -56,7 +61,8 @@ setProfile()
 
 function renderEmpty() {
   const message = document.querySelector(".message");
-  message.innerHTML = "Não há agendamentos no momento."
+  message.setAttribute('style', 'border: 0.1rem solid var(--orange);')
+  message.innerHTML = `Você não possui agendamentos para a unidade ${city} no momento`
 }
 
 // -> DELETE DB INFORMATION
