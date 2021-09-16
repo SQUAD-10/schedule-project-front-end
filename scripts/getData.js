@@ -64,7 +64,7 @@ function setProfile() {
 
   helloUser.textContent = `Olá, ${sessionStorage.name}`
   userEmail.textContent = `${sessionStorage.email}`
-  dateToday.textContent = `${sessionStorage.dateToday}`
+  dateToday.innerHTML = `<img src="../images/calendar.svg"/> ${sessionStorage.dateToday}`
 }
 setProfile()
 

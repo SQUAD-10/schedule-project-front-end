@@ -85,6 +85,10 @@ header {
   color: var(--dark-grey);
 }
 
+.today img {
+  transform: translateY(20%);
+}
+
 .container {
   display: flex;
   flex-direction: column;
