@@ -47,7 +47,6 @@ function renderData(data) {
   for(let i = 0; i < 5; i++) {
     appointment.innerHTML +=
     `<div class="wrapper">
-
       <div class="info">
         <strong> Data: </strong> <span></span> ${data[i].date.slice(8,10) + data[i].date.slice(4,8) + data[i].date.slice(0,4)}
         <span></span> <strong> Unidade: </strong> <span></span> ${city}

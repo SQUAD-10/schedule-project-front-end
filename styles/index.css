@@ -99,6 +99,13 @@ header {
   font-size: 3rem;
 }
 
+.container-fill {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  height: calc(100vh - 30.2rem);
+}
+
 .div-line {
   height: 0.2rem;
   width: 80rem;
@@ -375,18 +382,26 @@ form input:focus {
 }
 
 @media (max-width: 425px) {
-  html {
+  .white {
     background-color: var(--light-grey);
+  }
+  .white {
+    background-color: var(--white);
   }
   .container,
   header,
   .div-line,
-  .wrapper {
+  .wrapper,
+  .message {
     width: 40rem;
   }
 
   header {
     height: 15rem;
+  }
+
+  .container-fill {
+    height: calc(100vh - 22.2rem);
   }
 
   .main-line {
@@ -402,12 +417,18 @@ form input:focus {
   }
 
   main {
-    height: auto;
+    height: calc(100vh - 22.2rem);
   }
 
   .buttons {
     margin: 1rem 0;
     height: 5rem;
+  }
+
+  .message {
+    font-size: 2rem;
+    margin: 2rem 0;
+    padding: 2rem;
   }
 
   .wrapper {
@@ -428,7 +449,8 @@ form input:focus {
   .container,
   header,
   .div-line,
-  .wrapper {
+  .wrapper,
+  .message {
     width: 36rem;
   }
 }
