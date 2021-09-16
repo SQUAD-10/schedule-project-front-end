@@ -33,6 +33,7 @@ function modalRegister() {
     const tag = document.querySelector('.white-tag')
     tag.innerHTML = `
       <h2>DATA INVÁLIDA</h2>
+      <img class="modal-img" src="../images/x-circle.svg"/>
       <p>Não é possível agendar para ${showDateToday} ou datas anteriores</p>
       <div class="option-buttons">
         <button class="btn-ok">OK</button>
@@ -76,9 +77,10 @@ function modalConfirmation() {
     tag.innerHTML = `
       <h2>CONFIRMADO</h2>
       <p>Seu agendamento para o dia ${chosenDate} foi confirmado com sucesso</p>
+      <img class="modal-img" src="../images/check-circle.svg"/>
     `
-  window.setTimeout( () => {
-    modalClose()}, 3000)
+  /*window.setTimeout( () => {
+    modalClose()}, 3000)*/
 }
 
 function modalClose() {

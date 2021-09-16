@@ -322,6 +322,11 @@ form input:focus {
   margin: 1rem 0;
 }
 
+.modal-img {
+  min-height: 3.5rem;
+  max-height: 3.5rem;
+}
+
 .modal .option-buttons {
   display: flex;
   justify-content: space-around;
@@ -356,8 +361,4 @@ form input:focus {
 }
 .option-buttons .btn-confirm:hover {
   opacity: 0.95;
-}
-
-.teste {
-  color: #db3f3f;
 }
