@@ -57,6 +57,8 @@ saveCalendarDate()
 const showDateToday = `${today}/${thisMonth}/${thisYear}`
 sessionStorage.setItem('dateToday', showDateToday)
 
+const showDateTomorrow = `${parseInt(today)+1}/${thisMonth}/${thisYear}`
+
 function setProfile() {
   const helloUser = document.querySelector('.hello')
   const userEmail = document.querySelector('.email')
@@ -129,29 +131,35 @@ function verifyAndSetDate() {
   let thisYearNumber = parseInt(thisYear)
   let yearNumber = parseInt(year)
 
+  let verifiedResult = ''
   const calendarDaySelected = document.querySelector('.cal-day__day--selected')
 
   if (yearNumber >= thisYearNumber && monthNumber == thisMonthNumber && dayNumber > todayNumber) {
+    verifiedResult = true
     setDate()
     calendarDaySelected.removeAttribute('style', 'filter: grayscale()')
     console.log('Pode agendar')
   }
   else if (yearNumber >= thisYearNumber && monthNumber > thisMonthNumber) {
+    verifiedResult = true
     setDate()
     calendarDaySelected.removeAttribute('style', 'filter: grayscale()')
     console.log('Pode agendar')
   }
   else if (yearNumber > thisYearNumber) {
+    verifiedResult = true
     setDate()
     calendarDaySelected.removeAttribute('style', 'filter: grayscale()')
     console.log('Pode agendar')
   }
   else {
+    verifiedResult = false
     showWarning()
     calendarDaySelected.setAttribute('style', 'filter: grayscale()')
     console.log('Não pode agendar')
   }
   showDate()
+  return verifiedResult
 }
 
 function showDate() {

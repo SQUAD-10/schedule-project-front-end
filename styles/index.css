@@ -342,10 +342,12 @@ form input:focus {
   cursor: pointer;
 }
 
-.option-buttons .btn-cancel {
+.option-buttons .btn-cancel,
+.btn-ok {
   background-color: var(--blue);
 }
-.option-buttons .btn-cancel:hover {
+.option-buttons .btn-cancel:hover,
+.btn-ok {
   opacity: 0.95;
 }
 .option-buttons .btn-confirm {
