@@ -375,20 +375,39 @@ form input:focus {
 }
 
 @media (max-width: 425px) {
+  html {
+    background-color: var(--light-grey);
+  }
   .container,
   header,
   .div-line,
   .wrapper {
     width: 40rem;
   }
-}
 
-@media (max-width: 375px) {
-  .container,
-  header,
-  .div-line,
-  .wrapper {
-    width: 36rem;
+  header {
+    height: 15rem;
+  }
+
+  .main-line {
+    min-height: 7rem;
+  }
+
+  .select {
+    margin: 1rem 0;
+  }
+
+  .show-date {
+    margin-bottom: 1rem;
+  }
+
+  main {
+    height: auto;
+  }
+
+  .buttons {
+    margin: 1rem 0;
+    height: 5rem;
   }
 
   .wrapper {
@@ -402,5 +421,14 @@ form input:focus {
 
   .info span {
     width: 1rem;
+  }
+}
+
+@media (max-width: 375px) {
+  .container,
+  header,
+  .div-line,
+  .wrapper {
+    width: 36rem;
   }
 }
