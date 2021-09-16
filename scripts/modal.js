@@ -76,10 +76,9 @@ function modalRegister() {
 //CALENDAR PAGE APPOINTMENT CONFIRMATION
 function modalConfirmation() {
   const tag = document.querySelector('.white-tag')
-  const chosenDate = showDate()
   tag.innerHTML = `
     <h2>CONFIRMADO</h2>
-    <p>Seu agendamento foi confirmado com sucesso</p>
+    <p>Agendamento confirmado com sucesso</p>
     <img class="modal-img" src="../images/check-circle.svg"/>
     <div class="option-buttons">
       <button class="btn-ok">OK</button>

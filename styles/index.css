@@ -304,7 +304,7 @@ form input:focus {
 .modal .white-tag {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-around;
   height: 20rem;
   text-align: center;
   border-radius: 0 0 1rem 1rem;
@@ -312,19 +312,15 @@ form input:focus {
   background-color: var(--white);
 }
 
-.modal .white-tag sleep {
-  visibility: hidden;
-  opacity: 0;
-}
-
 .modal .white-tag p {
   font-size: 1.8rem;
   margin: 1rem 0;
+  margin-bottom: 0;
 }
 
 .modal-img {
-  min-height: 3.5rem;
-  max-height: 3.5rem;
+  min-height: 3rem;
+  max-height: 3rem;
 }
 
 .modal .option-buttons {
@@ -339,7 +335,7 @@ form input:focus {
 .modal .option-buttons button {
   width: 10rem;
   height: 4rem;
-  margin: 2rem 0;
+  margin-top: 1rem;
   padding: 0 1rem;
   border-radius: 0.5rem;
   color: var(--white);
