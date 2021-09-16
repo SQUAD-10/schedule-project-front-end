@@ -52,7 +52,7 @@ function renderData(data) {
         <strong> Data: </strong> <span></span> ${data[i].date.slice(8,10) + data[i].date.slice(4,8) + data[i].date.slice(0,4)}
         <span></span> <strong> Unidade: </strong> <span></span> ${city}
       </div>
-      <img class="btnDelete" src="images/delete.svg" onclick="deleteAppointment('${data[i]._id}')"/>
+      <img class="btn-delete" src="images/delete.svg" onclick="deleteAppointment('${data[i]._id}')"/>
     </div>`
   }
 }

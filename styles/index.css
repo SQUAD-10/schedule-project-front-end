@@ -262,9 +262,87 @@ form input:focus {
   width: 2rem;
 }
 
-.btnDelete {
+.btn-delete {
   width: 3rem;
   height: 3rem;
   cursor: pointer;
   margin-bottom: 0.5rem;
+}
+
+/* MODAL */
+
+.modal-wrapper {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  display: flex;
+
+  background: rgba(4, 9, 17, 0.5);
+
+  /*visibility: hidden;
+  opacity: 0;*/
+}
+
+.modal {
+  width: 60rem;
+  margin: auto;
+  font-size: 1.2rem;
+}
+
+.modal .orange-tag {
+  height: 4rem;
+  border-radius: 1rem 1rem 0 0;
+  background-color: var(--orange);
+}
+
+.modal .white-tag {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 20rem;
+  text-align: center;
+  border-radius: 0 0 1rem 1rem;
+  padding: 2rem;
+  background-color: var(--white);
+}
+
+.modal .white-tag p {
+  font-size: 1.8rem;
+  margin: 1rem 0;
+}
+
+.modal .option-buttons {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 1.8rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.modal .option-buttons button {
+  width: 10rem;
+  height: 4rem;
+  margin: 2rem 0;
+  padding: 0 1rem;
+  border-radius: 0.5rem;
+  color: var(--white);
+  font-size: 1.8rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.option-buttons .btn-cancel {
+  background-color: var(--blue);
+}
+.option-buttons .btn-cancel:hover {
+  opacity: 0.95;
+}
+.option-buttons .btn-confirm {
+  background-color: var(--orange);
+}
+.option-buttons .btn-confirm:hover {
+  opacity: 0.95;
 }
