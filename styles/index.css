@@ -159,6 +159,20 @@ form input:focus {
   transition: 1s ease all;
 }
 
+#name::placeholder {
+  background-image: url(../images/user.svg);
+  background-repeat: no-repeat;
+  background-position: left;
+  padding-left: 3rem;
+}
+
+#email::placeholder {
+  background-image: url(../images/at.svg);
+  background-repeat: no-repeat;
+  background-position: left;
+  padding-left: 3rem;
+}
+
 .select {
   margin: 2rem 0;
   padding: 0 1rem;
@@ -182,7 +196,7 @@ form input:focus {
   border-radius: 0.5rem;
   background-color: var(--blue);
   color: var(--white);
-  font-size: 2rem;
+  font-size: 1.8rem;
   font-weight: 700;
 }
 
