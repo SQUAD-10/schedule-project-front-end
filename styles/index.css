@@ -26,6 +26,7 @@ html {
 body {
   display: flex;
   justify-content: center;
+  align-items: center;
   font-family: "Roboto", sans-serif;
   color: var(--black);
   background: var(--white);
@@ -139,7 +140,6 @@ form,
   align-items: center;
   font-size: 2rem;
   border-radius: 0.5rem;
-  width: 80rem;
 }
 
 span div {
@@ -185,6 +185,7 @@ form input:focus {
   border: 0.1rem solid var(--orange);
   border-radius: 0.5rem;
   background-color: var(--white);
+  color: var(--black);
   font-size: 2rem;
   cursor: pointer;
 }
@@ -357,4 +358,49 @@ form input:focus {
 }
 .option-buttons .btn-confirm:hover {
   opacity: 0.95;
+}
+
+@media (max-width: 800px) {
+  .container,
+  header,
+  .div-line,
+  .wrapper {
+    width: 74rem;
+  }
+
+  .logo-picture-area,
+  .profile {
+    margin-right: 2rem;
+  }
+}
+
+@media (max-width: 425px) {
+  .container,
+  header,
+  .div-line,
+  .wrapper {
+    width: 40rem;
+  }
+}
+
+@media (max-width: 375px) {
+  .container,
+  header,
+  .div-line,
+  .wrapper {
+    width: 36rem;
+  }
+
+  .wrapper {
+    padding: 0 1rem;
+  }
+
+  .info {
+    padding-left: 1rem;
+    font-size: 1.6rem;
+  }
+
+  .info span {
+    width: 1rem;
+  }
 }
