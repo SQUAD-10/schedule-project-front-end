@@ -5,7 +5,7 @@ const api = axios.create({
 // -> POST INFORMATION IN DB
 function setAppointment() {
   if(sessionStorage.date == '') {
-    window.alert('É preciso escolher uma data ou uma nova data')
+    modalRegister()
   }
   else {
     api.post(`/${sessionStorage.place}/post`, {

@@ -25,7 +25,7 @@ function modalRegister() {
     const tag = document.querySelector('.white-tag')
     modal.classList.add("small")
     tag.innerHTML = `
-      <p>Não é possível agendar datas anteriores a ${showDateTomorrow}</p>
+      <p>Não é possível agendar para ${showDateToday} ou datas anteriores</p>
       <div class="option-buttons">
         <button class="btn-ok">OK</button>
       </div>`
