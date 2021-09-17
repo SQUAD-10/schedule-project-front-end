@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt_BR">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1.0">
+  <link rel="stylesheet" href="/styles/index.css">
+  <link rel="stylesheet" href="/styles/calendar.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <title>OrangeBox</title>
+</head>
+<body>
+  <img src="images/moon.svg" id='modeSwitch' />
+  <div class="container">
+    <header>
+      <div class="logo-picture-area">
+        <img class="logo" src="images/logo.svg">
+        <img class="userProfile" src="images/userProfile.svg">
+      </div>
+      <div class="profile">
+        <div class="hello">...</div>
+        <div class="email">...</div>
+        <div class="today">...</div>
+      </div>
+    </header>
+
+    <div class="div-line"></div>
+    <section class="main-line">
+      <button id="btn-agenda" form="select-menu" class="buttons myAppointments">MEUS AGENDAMENTOS</button>
+    </section>
+
+    <main>
+      <form id="select-menu">
+        <select class="select" type="select" onclick="savePlace(); return false" required>
+          <option disabled selected value>Selecione o Escritório</option>
+          <option value="sao-paulo">São Paulo</option>
+          <option value="santos">Santos</option>
+        </select>
+      </form>
+
+      <section class="calendar-section">
+
+        <div class="show-date">Selecione uma data</div>
+
+        <div class="calendar">
+          <div class="calendar__month">
+            <div class="cal-month__previous"><</div>
+            <div class="cal-month__current"></div>
+            <div class="cal-month__next">></div>
+          </div>
+          <div class="calendar__head">
+            <div class="cal-head__day"></div>
+            <div class="cal-head__day"></div>
+            <div class="cal-head__day"></div>
+            <div class="cal-head__day"></div>
+            <div class="cal-head__day"></div>
+            <div class="cal-head__day"></div>
+            <div class="cal-head__day"></div>
+          </div>
+          <div class="calendar__body">
+            <div class="cal-body__week">
+              <div class="cal-body__day"></div>
+              <div class="cal-body__day"></div>
+              <div class="cal-body__day"></div>
+              <div class="cal-body__day"></div>
+              <div class="cal-body__day"></div>
+              <div class="cal-body__day"></div>
+              <div class="cal-body__day"></div>
+            </div>
+            <div class="cal-body__week">
+              <div class="cal-body__day"></div>
+              <div class="cal-body__day"></div>
+              <div class="cal-body__day"></div>
+              <div class="cal-body__day"></div>
+              <div class="cal-body__day"></div>
+              <div class="cal-body__day"></div>
+              <div class="cal-body__day"></div>
+            </div>
+            <div class="cal-body__week">
+              <div class="cal-body__day"></div>
+              <div class="cal-body__day"></div>
+              <div class="cal-body__day"></div>
+              <div class="cal-body__day"></div>
+              <div class="cal-body__day"></div>
+              <div class="cal-body__day"></div>
+              <div class="cal-body__day"></div>
+            </div>
+            <div class="cal-body__week">
+              <div class="cal-body__day"></div>
+              <div class="cal-body__day"></div>
+              <div class="cal-body__day"></div>
+              <div class="cal-body__day"></div>
+              <div class="cal-body__day"></div>
+              <div class="cal-body__day"></div>
+              <div class="cal-body__day"></div>
+            </div>
+            <div class="cal-body__week">
+              <div class="cal-body__day"></div>
+              <div class="cal-body__day"></div>
+              <div class="cal-body__day"></div>
+              <div class="cal-body__day"></div>
+              <div class="cal-body__day"></div>
+              <div class="cal-body__day"></div>
+              <div class="cal-body__day"></div>
+            </div>
+            <div class="cal-body__week">
+              <div class="cal-body__day"></div>
+              <div class="cal-body__day"></div>
+              <div class="cal-body__day"></div>
+              <div class="cal-body__day"></div>
+              <div class="cal-body__day"></div>
+              <div class="cal-body__day"></div>
+              <div class="cal-body__day"></div>
+            </div>
+          </div>
+        </div>
+
+
+      </section>
+
+      <div class="data"></div>
+
+      <button id="btn-send" class="buttons" form="select-menu">AGENDAR</button>
+
+    </main>
+
+    <!-- MODAL -->
+    <div class="modal-wrapper">
+      <div class="modal">
+        <div class="orange-tag"></div>
+        <div class="white-tag"></div>
+      </div>
+    </div>
+
+  </div>
+  <script src="https://momentjs.com/downloads/moment-with-locales.js"></script>
+  <script src="scripts/calendar.js"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="scripts/getData.js"></script>
+  <script src="scripts/api.js"></script>
+  <script src="scripts/modal.js"></script>
+  <script src="scripts/darkmode.js"></script>
+</body>
+</html>

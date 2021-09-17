@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt_BR">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1.0">
+  <link rel="stylesheet" href="/styles/index.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <title>OrangeBox</title>
+</head>
+<body>
+  <img src="images/moon.svg" id='modeSwitch' />
+  <div class="container">
+    <header>
+      <div class="logo-picture-area">
+        <img class="logo" src="images/logo.svg">
+        <img class="userProfile" src="images/userProfile.svg">
+      </div>
+      <div class="profile">
+        <div class="hello"></div>
+        <div class="email"></div>
+        <div class="today"></div>
+      </div>
+    </header>
+
+    <div class="div-line"></div>
+    <section class="main-line">
+      <div class="title">AGENDAMENTOS</div>
+    </section>
+
+    <main>
+      <div class="message"></div>
+      <div class="container-fill">
+          <div class="appointment"></div>
+      </div>
+
+      <div class="buttons">
+        <button class="buttons" onclick="goBack()">VOLTAR</button>
+      </div>
+    </main>
+  </div>
+
+  <!-- MODAL -->
+  <div class="modal-wrapper">
+    <div class="modal">
+      <div class="orange-tag"></div>
+      <div class="white-tag"></div>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="scripts/getData.js"></script>
+  <script src="scripts/api.js"></script>
+  <script src="scripts/modal.js"></script>
+  <script src="scripts/darkmode.js"></script>
+</body>
+</html>
