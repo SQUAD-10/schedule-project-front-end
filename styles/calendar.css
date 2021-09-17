@@ -37,7 +37,7 @@
 
 .cal-month__current {
   text-align: center;
-  color: #6d6c6c;
+  color: var(--dark-grey);
 }
 
 .cal-head__day,
@@ -72,14 +72,14 @@
 }
 
 .cal-body__day {
-  color: #e1e1e1;
+  color: var(--medium-grey);
   line-height: 50px;
   text-align: center;
   cursor: pointer;
 }
 
 .cal-day__month--current {
-  color: #777;
+  color: var(--black);
 }
 
 .cal-day__day--today {

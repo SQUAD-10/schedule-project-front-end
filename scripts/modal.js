@@ -78,7 +78,7 @@ function modalConfirmation() {
   const tag = document.querySelector('.white-tag')
   tag.innerHTML = `
     <h2>CONFIRMADO</h2>
-    <p>Agendamento confirmado com sucesso</p>
+    <p>Agendamento realizado com sucesso</p>
     <img class="modal-img" src="../images/check-circle.svg"/>
     <div class="option-buttons">
       <button class="btn-ok">OK</button>
