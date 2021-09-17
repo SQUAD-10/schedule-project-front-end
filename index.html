@@ -3,34 +3,36 @@
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1.0">
   <link rel="stylesheet" href="/styles/index.css">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,700;1,400;1,500;1,700&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <title>OrangeBox</title>
 </head>
 
-<body>
-  <header>
-    <div class="container">
-      <h1>OrangeBox</h1>
-    </div>
-  </header>
+<body class="white">
+  <img src="images/sun.svg" id='modeSwitch' />
+  <div class="container">
+    <header>
+      <div class="container">
+        <img class="logo" src="images/logo.svg">
+      </div>
+    </header>
 
-  <main>
-    <form id="form" action="" onsubmit="saveUser(); return false">
-      <label for="name">Nome:</label>
-      <input type="text" id="name" name="name" required>
-      <label for="email">E-mail:</label>
-      <input type="email" id="email" name="email" required>
-    </form>
+    <main class="white">
+      <form id="form" action="" onsubmit="saveUser(); return false">
+        <input type="text" id="name" name="name" placeholder="Nome" required>
+        <input type="email" id="email" name="email" placeholder="E-mail" required>
+      </form>
 
-    <div class="buttons">
-      <button form="form">Entrar</button>
-    </div>
-  </main>
+
+      <button class="buttons" form="form">ENTRAR</button>
+
+    </main>
+  </div>
 
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   <script src="scripts/getData.js"></script>
-  <script src="scripts/api.js"></script>
+  <script src="scripts/darkmode.js"></script>
 </body>
 </html>

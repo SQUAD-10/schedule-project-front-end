@@ -7,88 +7,181 @@ function saveUser() {
 }
 
 function savePlace() {
-  const place = document.querySelector('#options').value;
+  const place = document.querySelector('.select').value;
   sessionStorage.setItem('place', place)
+
+  const btnSend = document.querySelector('#btn-send')
+  btnSend.setAttribute('type', 'button')
+  btnSend.addEventListener('click', () => {
+    modalRegister()
+  })
+
+  const btnAgenda = document.querySelector('#btn-agenda')
+  btnAgenda.setAttribute('type', 'button')
+  btnAgenda.addEventListener('click', () => {
+    toMyAppointments()
+  })
+
   console.log(place)
   console.log(sessionStorage)
 }
 
 
 const calendarDay = document.querySelectorAll('.cal-body__day');
+const calendarDayToday = document.querySelectorAll('.cal-day__day--today');
+const currentDay = calendarDayToday[0].innerText
+
 const calendarMonth = document.querySelector('.cal-month__current')
+const currentMonth = calendarMonth.innerText.slice(0, -5)
+const currentYear = calendarMonth.innerText.slice(-4)
 
 const day = []
+const today = []
 const month = []
+const thisMonth = []
 const year = []
+const thisYear = []
+
+thisYear.push(currentYear)
+today.push(currentDay)
+changeNameToNumber(currentMonth)
+
 
 function saveCalendarDate() {
   for(let i = 0; i < calendarDay.length; i++) {
-    // -> ADD DAY
+
+    // -> ADD DAY AND TODAY
     calendarDay[i].addEventListener('mousedown', () => {
-      let selectDay = calendarDay[i].innerText
-      selectDay = selectDay.padStart(2, '0')
-      day.splice(0, 1, selectDay)
+      let selectedDay = calendarDay[i].innerText
+      selectedDay = selectedDay.padStart(2, '0')
+      day.splice(0, 1, selectedDay)
     })
+
     // -> ADD MONTH AND YEAR
     calendarDay[i].addEventListener('click', () => {
-      let selectMonth = calendarMonth.innerText
-      changeNameToNumber(selectMonth.slice(0, -5))
-      year.splice(0, 1, selectMonth.slice(-4))
-      showDate()
+      let selectedMonth = calendarMonth.innerText
+      year.splice(0, 1, selectedMonth.slice(-4))
+      changeNameToNumber(selectedMonth.slice(0, -5))
+      verifyAndSetDate()
     })
   }
 }
 saveCalendarDate()
 
+const showDateToday = `${today}/${thisMonth}/${thisYear}`
+sessionStorage.setItem('dateToday', showDateToday)
+
+function setProfile() {
+  const helloUser = document.querySelector('.hello')
+  const userEmail = document.querySelector('.email')
+  const dateToday = document.querySelector('.today')
+
+  helloUser.textContent = `Olá, ${sessionStorage.name}`
+  userEmail.textContent = `${sessionStorage.email}`
+  dateToday.innerHTML = `<img src="../images/calendar.svg"/> ${sessionStorage.dateToday}`
+}
+setProfile()
+
 function changeNameToNumber(monthName) {
-  let number = ''
-  if(monthName == 'janeiro') {
-    number = monthName.replace(monthName, '01')
+  let monthNumber = ''
+
+  switch(monthName) {
+    case 'janeiro':
+      monthNumber = '01'
+      break;
+    case 'fevereiro':
+      monthNumber = '02'
+      break;
+    case 'março':
+      monthNumber = '03'
+      break;
+    case 'abril':
+      monthNumber = '04'
+      break;
+    case 'maio':
+      monthNumber = '05'
+      break;
+    case 'junho':
+      monthNumber = '06'
+      break;
+    case 'julho':
+      monthNumber = '07'
+      break;
+    case 'agosto':
+      monthNumber = '08'
+      break;
+    case 'setembro':
+      monthNumber = '09'
+      break;
+    case 'outubro':
+      monthNumber = '10'
+      break;
+    case 'novembro':
+      monthNumber = '11'
+      break;
+    case 'dezembro':
+      monthNumber = '12'
+      break;
   }
-  else if (monthName == 'fevereiro') {
-    number = monthName.replace(monthName, '02')
+
+  if (thisMonth.length == 0) {
+    thisMonth.push(monthNumber)
   }
-  else if (monthName == 'março') {
-    number = monthName.replace(monthName, '03')
+  if (month.length == 0) {
+    month.push(monthNumber)
   }
-  else if (monthName == 'abril') {
-    number = monthName.replace(monthName, '04')
+  else {
+    month.splice(0, 1, monthNumber)
   }
-  else if (monthName == 'maio') {
-    number = monthName.replace(monthName, '05')
+}
+
+function verifyAndSetDate() {
+  let todayNumber = parseInt(today)
+  let dayNumber = parseInt(day)
+  let thisMonthNumber = parseInt(thisMonth)
+  let monthNumber = parseInt(month)
+  let thisYearNumber = parseInt(thisYear)
+  let yearNumber = parseInt(year)
+
+  let verifiedResult = ''
+  const calendarDaySelected = document.querySelector('.cal-day__day--selected')
+
+  if (yearNumber >= thisYearNumber && monthNumber == thisMonthNumber && dayNumber > todayNumber) {
+    verifiedResult = true
+    setDate()
+    calendarDaySelected.removeAttribute('style', 'filter: grayscale()')
   }
-  else if (monthName == 'junho') {
-    number = monthName.replace(monthName, '06')
+  else if (yearNumber >= thisYearNumber && monthNumber > thisMonthNumber) {
+    verifiedResult = true
+    setDate()
+    calendarDaySelected.removeAttribute('style', 'filter: grayscale()')
   }
-  else if (monthName == 'julho') {
-    number = monthName.replace(monthName, '07')
+  else if (yearNumber > thisYearNumber) {
+    verifiedResult = true
+    setDate()
+    calendarDaySelected.removeAttribute('style', 'filter: grayscale()')
   }
-  else if (monthName == 'agosto') {
-    number = monthName.replace(monthName, '08')
+  else {
+    verifiedResult = false
+    calendarDaySelected.setAttribute('style', 'filter: grayscale()')
   }
-  else if (monthName == 'setembro') {
-    number = monthName.replace(monthName, '09')
-  }
-  else if (monthName == 'outubro') {
-    number = monthName.replace(monthName, '10')
-  }
-  else if (monthName == 'novembro') {
-    number = monthName.replace(monthName, '11')
-  }
-  else if (monthName == 'dezembro') {
-    number = monthName.replace(monthName, '12')
-  }
-  month.splice(0, 1, number)
+  showDate()
+  return verifiedResult
 }
 
 function showDate() {
   const dateDisplay = document.querySelector('.show-date');
-  const localDate = dateDisplay.textContent = `${day}/${month}/${year}`
-  sessionStorage.setItem('localDate', localDate)
+  if (day.length > 0) {
+    const localDate = dateDisplay.textContent = `${day}/${month}/${year}`
+    sessionStorage.setItem('localDate', localDate)
 
+    return localDate
+  }
+}
+
+function setDate() {
   const finalDate = `${year}/${month}/${day}`
   sessionStorage.setItem('date', finalDate)
-  console.log(finalDate)
 }
 
 function goBack() {

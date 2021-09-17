@@ -5,7 +5,7 @@ const api = axios.create({
 // -> POST INFORMATION IN DB
 function setAppointment() {
   if(sessionStorage.date == '') {
-    window.alert('É preciso escolher uma data ou uma nova data')
+    modalRegister()
   }
   else {
     api.post(`/${sessionStorage.place}/post`, {
@@ -22,6 +22,10 @@ function setAppointment() {
   }
 }
 
+// FIX CITY NAME
+let city = ''
+sessionStorage.place == 'santos' ? city = 'Santos' : city = 'São Paulo'
+
 // -> GET AND DISPLAY DB INFORMATION
 function myAppointments() {
   api.get(`/${sessionStorage.place}/${sessionStorage.email}`)
@@ -29,40 +33,42 @@ function myAppointments() {
     return renderData(data)
   })
   .catch((err) => {
-    return renderEmpty()
+    const appointment = document.querySelector(".appointment");
+    if (appointment.innerText == '') {
+      renderEmpty()
+    }
   });
 }
 setTimeout(myAppointments(), 100)
 
 function renderData(data) {
   const appointment = document.querySelector(".appointment");
-  const message = document.querySelector(".message");
-  message.textContent = ''
 
-  for(let i = 0; i < data.length; i++) {
+  for(let i = 0; i < 5; i++) {
     appointment.innerHTML +=
     `<div class="wrapper">
-
       <div class="info">
-        <strong> Nome: </strong>  ${data[i].name} </br>
-        <strong> Email: </strong> ${data[i].email} </br>
-        <strong> Data: </strong>  ${data[i].date.slice(8,10) + data[i].date.slice(4,8) + data[i].date.slice(0,4)} </br>
+        <strong> Data: </strong> <span></span> ${data[i].date.slice(8,10) + data[i].date.slice(4,8) + data[i].date.slice(0,4)}
+        <span></span> <strong> Unidade: </strong> <span></span> ${city}
       </div>
-       <div class="options"> <button class="btnDelete" onclick="deleteAppointment('${data[i]._id}')">X</button> Cancelar </div>
+      <img class="btn-delete" src="images/delete.svg" onclick="modalDelete('${data[i]._id}')"/>
     </div>`
   }
 }
 
+setProfile()
+
 function renderEmpty() {
   const message = document.querySelector(".message");
-  message.innerHTML = "Não há agendamentos no momento."
+  message.setAttribute('style', 'border: 0.1rem solid var(--orange);')
+  message.innerHTML = `Você não possui agendamentos para a unidade ${city} no momento`
 }
 
 // -> DELETE DB INFORMATION
 function deleteAppointment(data) {
   api.delete(`/${sessionStorage.place}/${data}`)
   .then(({ data }) => {
-    alert(data.message);
+    //alert(data.message);
     document.location.reload(true)
   })
 }
